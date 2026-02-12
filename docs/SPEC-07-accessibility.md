@@ -56,6 +56,32 @@
 
 ## 2. iOS/MOBILE ACCESSIBILITY
 
+### Interactive Text Sizing (Apple HIG)
+
+**Minimum 17px for all interactive text on mobile:**
+
+| Element Type | Minimum | Tailwind Class | Example |
+|-------------|---------|----------------|---------|
+| Button text | 17px | `text-[17px]` | Submit, Cancel |
+| Link text | 17px | `text-[17px]` | Read More, Back |
+| Navigation | 17px | `text-[17px]` | Menu items |
+| Form labels | 17px | `text-[17px]` | Checkbox labels |
+| Form inputs | 16px | `text-base` | Text fields, selects |
+
+**Mobile-first pattern:**
+```tsx
+// Interactive text - larger on mobile, can reduce on desktop
+className="text-[17px] md:text-sm"
+
+// Form inputs - 16px prevents iOS zoom
+className="text-base min-h-[44px]"
+```
+
+**Allowed exceptions (non-interactive):**
+- Eyebrow labels: 12px (`text-xs`)
+- Timestamps: 12-14px
+- Static metadata: 14px (`text-sm`)
+
 ### Dynamic Type Support
 ```css
 /* globals.css */
@@ -133,23 +159,38 @@ html {
 
 ### Minimum Size: 44px × 44px (Apple HIG)
 
-| Component | Implementation |
-|-----------|----------------|
-| Buttons | `min-h-[44px]` on mobile |
-| Form inputs | `min-h-[48px]` |
-| Toggle switches | `w-11 h-[28px]` |
-| Checkboxes | `w-11 h-11` touch wrapper |
-| Social icons | `w-11 h-11` |
-| Footer links | `min-h-[44px]` with padding |
-| Back-to-top | `w-11 h-11 min-w-[44px] min-h-[44px]` |
+| Component | Implementation | Text Size |
+|-----------|----------------|-----------|
+| Buttons | `min-h-[44px]` on mobile | `text-[17px]` |
+| Form inputs | `min-h-[44px]` or `min-h-[48px]` | `text-base` (16px) |
+| Toggle switches | `w-11 h-[28px]` | — |
+| Checkboxes | `w-11 h-11` touch wrapper | `text-[17px]` labels |
+| Social icons | `w-11 h-11` | — |
+| Footer links | `min-h-[44px]` with padding | `text-[17px]` |
+| Navigation pills | `min-h-[44px]` with padding | `text-[17px]` |
+| Filter buttons | `min-h-[44px]` | `text-[17px]` |
+| Back-to-top | `w-11 h-11 min-w-[44px] min-h-[44px]` | — |
 
+### Button Component Example
 ```tsx
-// Button component example
+// Button with proper touch target AND text sizing
 const sizes = {
-  sm: "px-6 py-3 md:py-2.5 min-h-[44px] md:min-h-0",
-  md: "px-8 py-3.5 md:py-3 min-h-[48px] md:min-h-0",
-  lg: "px-10 py-4 min-h-[52px] md:min-h-0",
+  sm: "px-6 py-3 md:py-2.5 min-h-[44px] md:min-h-0 text-[17px] md:text-sm",
+  md: "px-8 py-3.5 md:py-3 min-h-[48px] md:min-h-0 text-[17px]",
+  lg: "px-10 py-4 min-h-[52px] md:min-h-0 text-[17px] lg:text-lg",
 };
+```
+
+### Form Input Example
+```tsx
+// Input with iOS zoom prevention
+<input
+  className="w-full px-4 py-3 text-base min-h-[44px] border-4 border-black"
+  ...
+/>
+
+// Select with proper sizing
+<select className="w-full px-4 py-3 text-base min-h-[44px] border-4 border-black">
 ```
 
 ---

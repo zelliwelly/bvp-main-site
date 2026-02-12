@@ -278,14 +278,13 @@ export default function AboutPage() {
         <section
           id="mission"
           className="relative h-[70vh] flex items-end scroll-mt-20"
-          style={{ background: '#2a2a2a' }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70">
-            {/* Placeholder for hero image */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white/30 text-xl">[Hero image]</span>
-            </div>
-          </div>
+          <img
+            src="/images/who-we-are.jpg"
+            alt="Black Army veterans proudly waving American flag"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-24 pb-16 w-full">
             <p className="text-sm uppercase tracking-widest mb-4 text-white/60">Who We Are</p>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-white">

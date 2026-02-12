@@ -1,4 +1,277 @@
 @import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* ============================================
+   BVP FONT FAMILIES
+   ============================================ */
+
+/* Alverata - Primary Display/Headline Font */
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataLt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataLt-Italic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/Alverata.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/Alverata-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataMd.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataMd-Italic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataSb.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataSb-Italic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/Alverata-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/Alverata-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataBl.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alverata';
+  src: url('/fonts/alverata/AlverataBl-Italic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Linear Grotesk - Body/CTA Font */
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Linear Grotesk';
+  src: url('/fonts/linear-grotesk/LinearGrotesk-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Ontika - Button/CTA Font Option */
+@font-face {
+  font-family: 'Ontika';
+  src: url('/fonts/ontika/TBJOntika-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ontika';
+  src: url('/fonts/ontika/TBJOntika-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ontika';
+  src: url('/fonts/ontika/TBJOntika-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Gunterz - Secondary Display Font */
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gunterz';
+  src: url('/fonts/gunterz/Gunterz-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* ============================================
    BVP BASE STYLES
@@ -16,7 +289,7 @@
   }
 
   body {
-    font-family: "Open Sans", system-ui, sans-serif;
+    font-family: "Linear Grotesk", system-ui, sans-serif;
     /* Apple HIG: 17pt (17px) minimum for body text readability */
     font-size: 1.0625rem; /* 17px */
     line-height: 1.6;
@@ -28,9 +301,9 @@
 
   /* Headlines default to display font */
   h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, serif; /* Alverata fallback */
+    font-family: 'Alverata', Georgia, serif;
     font-weight: 700;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
   }
 
   /* Focus states for accessibility */
@@ -185,8 +458,9 @@
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
     min-height: 44px;
+    font-family: 'Ontika', system-ui, sans-serif;
     font-size: 0.875rem;
-    font-weight: 700;
+    font-weight: 500;
     letter-spacing: 0.025em;
     border-radius: 9999px;
     border: 2px solid #000;
@@ -220,7 +494,7 @@
 
   /* Stat number styling */
   .stat-number {
-    font-family: Georgia, serif;
+    font-family: 'Alverata', Georgia, serif;
     font-weight: 900;
     font-size: 3rem;
   }

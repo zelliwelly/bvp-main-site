@@ -268,7 +268,9 @@ function AccordionItem({ item, isOpen, onToggle, index, sectionIndex }: Accordio
           </span>
           <span
             className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
-              isOpen ? "bg-black rotate-180" : "bg-gray-500"
+              isOpen
+                ? "bg-black rotate-180 group-hover:bg-bvp-navy group-active:bg-bvp-gold group-active:text-black"
+                : "bg-gray-500 group-hover:bg-bvp-navy group-active:bg-bvp-gold group-active:text-black"
             }`}
             aria-hidden="true"
           >

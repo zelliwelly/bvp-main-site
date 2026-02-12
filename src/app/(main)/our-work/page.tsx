@@ -306,13 +306,13 @@ export default function OurWorkPage() {
         {/* ============================================== */}
         {/* HERO */}
         {/* ============================================== */}
-        <section className="relative h-[70vh] flex items-end" style={{ background: '#2a2a2a' }}>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70">
-            {/* Placeholder for hero image */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-white/30 text-xl">[Hero image]</span>
-            </div>
-          </div>
+        <section className="relative h-[70vh] flex items-end">
+          <img
+            src="/images/case-for-repair-hero.jpg"
+            alt="Navy sailors in formation representing the service and sacrifice of Black veterans"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
           <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-24 pb-16 w-full">
             <p className="text-sm uppercase tracking-widest mb-4 text-white/60">Our Work</p>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-white">

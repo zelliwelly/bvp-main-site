@@ -254,8 +254,8 @@ export function Header() {
                 <Link
                   href={item.href}
                   className={cn(
-                    "relative px-5 py-3 text-base font-medium text-white hover:text-bvp-gold transition-colors flex items-center gap-2 group/link focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bvp-gold focus-visible:rounded",
-                    pathname === item.href && "text-bvp-gold"
+                    "relative px-5 py-3 text-base font-medium text-white hover:text-white/80 transition-colors flex items-center gap-2 group/link focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bvp-gold focus-visible:rounded",
+                    pathname === item.href && "text-white"
                   )}
                   aria-current={pathname === item.href ? "page" : undefined}
                   aria-haspopup={item.children ? "true" : undefined}
@@ -290,45 +290,35 @@ export function Header() {
                       role="menu"
                       aria-label={`${item.name} submenu`}
                     >
-                      {/* Dropdown arrow */}
-                      <div className="absolute top-3 left-8 w-3 h-3 bg-white/50 backdrop-blur-md rotate-45 -translate-y-1/2 z-10" aria-hidden="true" />
-
                       <div className="relative bg-white/50 backdrop-blur-md rounded-lg shadow-xl min-w-[240px] overflow-hidden border border-white/20">
-                        {/* Gold accent bar at top */}
-                        <div className="h-1 bg-bvp-gold" aria-hidden="true" />
 
                         <div className="py-2">
-                          {item.children.map((child, idx) => (
+                          {item.children.map((child) => (
                             <motion.div key={child.name} variants={itemVariants}>
                               <Link
                                 href={child.href}
-                                className="group/item relative block px-5 py-3 transition-all duration-200 hover:bg-[#FDC500] active:bg-[#FDC500] min-h-[44px] flex items-center"
+                                className="group/item relative block px-5 py-3 transition-all duration-200 min-h-[44px] flex items-center border-l-4 border-transparent hover:border-bvp-gold hover:bg-white/50"
                                 onClick={() => setActiveDropdown(null)}
                                 role="menuitem"
                               >
                                 <div className="flex items-center justify-between gap-4 w-full">
-                                  <span className="text-base font-medium text-gray-700 group-hover/item:text-black transition-colors duration-200">
+                                  <span className="text-base font-medium text-black transition-colors duration-200">
                                     {child.name}
                                   </span>
 
                                   {/* Arrow */}
                                   <svg
-                                    className="w-4 h-4 text-gray-300 group-hover/item:text-black group-hover/item:translate-x-1 transition-all duration-200"
+                                    className="w-4 h-4 text-gray-500 group-hover/item:text-bvp-gold group-hover/item:translate-x-1 transition-all duration-200"
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
-                                    strokeWidth={2}
+                                    strokeWidth={2.5}
                                     aria-hidden="true"
                                   >
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                                   </svg>
                                 </div>
                               </Link>
-
-                              {/* Divider */}
-                              {idx !== item.children!.length - 1 && (
-                                <div className="mx-5 border-b border-gray-100" aria-hidden="true" />
-                              )}
                             </motion.div>
                           ))}
                         </div>

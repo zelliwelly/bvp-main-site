@@ -42,12 +42,18 @@ const config: Config = {
       // BVP TYPOGRAPHY
       // ============================================
       fontFamily: {
-        // Headlines - Alverata (dignity, authority) with Georgia fallback
+        // Headlines - Alverata (dignity, authority)
         display: ["Alverata", "Georgia", "serif"],
-        // Body - Open Sans (clarity, accessibility)
-        body: ["Open Sans", "system-ui", "sans-serif"],
-        // CTAs - Linear Grotesk (action, momentum)
-        cta: ["Linear Grotesk", "system-ui", "sans-serif"],
+        alverata: ["Alverata", "Georgia", "serif"],
+        // Secondary display - Gunterz (bold, military-inspired)
+        gunterz: ["Gunterz", "Georgia", "serif"],
+        // Ontika - Semi-display sans for buttons/CTAs
+        ontika: ["Ontika", "system-ui", "sans-serif"],
+        // Body - Linear Grotesk (clarity, modern)
+        body: ["Linear Grotesk", "system-ui", "sans-serif"],
+        linear: ["Linear Grotesk", "system-ui", "sans-serif"],
+        // CTAs - Ontika Medium (action, confident)
+        cta: ["Ontika", "system-ui", "sans-serif"],
       },
 
       fontSize: {

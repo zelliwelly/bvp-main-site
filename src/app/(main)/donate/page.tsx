@@ -593,7 +593,7 @@ export default function DonatePage() {
                   <button
                     type="submit"
                     disabled={donationAmount <= 0}
-                    className="w-full py-4 bg-black text-white font-bold text-lg hover:bg-gray-800 transition-colors focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full py-4 px-8 font-ontika font-medium text-lg tracking-wide rounded-full border-4 border-bvp-gold bg-bvp-gold text-black transition-all duration-300 hover:bg-white active:scale-95 focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {frequency === "monthly" ? "Start Monthly Donation" : "Donate"}{" "}
                     ${totalAmount.toFixed(2)} →

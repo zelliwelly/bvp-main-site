@@ -105,7 +105,15 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="bg-[#FDC500] relative overflow-hidden py-16 md:py-24 lg:py-[140px] px-6 md:px-[92px]">
+    <section
+      className="bg-[#FDC500] relative overflow-hidden"
+      style={{
+        paddingTop: 'clamp(4rem, 10vw, 8.75rem)',
+        paddingBottom: 'clamp(4rem, 10vw, 8.75rem)',
+        paddingLeft: 'clamp(1.5rem, 4vw, 5.75rem)',
+        paddingRight: 'clamp(1.5rem, 4vw, 5.75rem)',
+      }}
+    >
       {/* Camo pattern — full width behind content */}
       <img
         src="/images/camo-footer.png"

@@ -142,25 +142,21 @@ export default function Home() {
 
         {/* Media / Stories Section - Compact to fit in viewport */}
         <section
-          className="
-            pt-12 md:pt-20 lg:pt-[140px]
-            pb-12 md:pb-16 lg:pb-20
-            px-6 md:px-[92px]
-            border-t-4 border-[#FDC500]
-          "
+          className="border-t-4 border-[#FDC500]"
+          style={{ padding: 'clamp(3rem, 8vw, 8rem) clamp(1.5rem, 6vw, 5.75rem)' }}
         >
           <div className="max-w-[1400px] mx-auto">
-            {/* Featured Story - More compact */}
-            <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 mb-6">
-              {/* Left: Content */}
-              <div className="flex flex-col justify-center">
+            {/* Featured Story - Flex layout that stacks smoothly */}
+            <div className="flex flex-col lg:flex-row gap-6 mb-6 lg:items-center">
+              {/* Text Content - full width on mobile, shrinks on desktop */}
+              <div className="flex flex-col justify-center lg:flex-1 lg:max-w-[45%]">
                 <p className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-2">
                   From Our Substack
                 </p>
                 <h2 className="font-display font-bold leading-tight mb-3" style={{ fontSize: 'clamp(1.5rem, 0.75rem + 3vw, 2.5rem)' }}>
                   Turning Conley Monk's fight into a national reckoning toward repair.
                 </h2>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-4" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1rem)' }}>
                   Read more about the Conley Monk story
                 </p>
                 <div>
@@ -181,8 +177,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Right: Featured Image with rich hover effect */}
-              <div className="relative group cursor-pointer">
+              {/* Featured Image - full width on mobile, expands on desktop */}
+              <div className="relative group cursor-pointer lg:flex-1">
                 {/* Image container with shadow and lift */}
                 <div className="relative aspect-[16/10] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1">
                   <img
@@ -202,8 +198,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Secondary Stories Grid - World class blog cards */}
-            <div className="grid md:grid-cols-2 gap-4">
+            {/* Secondary Stories Grid - auto-fit for fluid columns */}
+            <div
+              className="grid gap-4"
+              style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))' }}
+            >
               {/* Story Card 1 */}
               <button
                 onClick={() => setSubstackModal({

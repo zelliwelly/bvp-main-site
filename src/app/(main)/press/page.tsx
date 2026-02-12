@@ -216,10 +216,10 @@ function FilterPill({ label, active, onClick }: FilterPillProps) {
   return (
     <button
       onClick={onClick}
-      className={`px-4 py-2.5 min-h-[44px] text-[17px] font-semibold rounded-md border transition-colors focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2 ${
+      className={`px-4 py-2.5 min-h-[44px] text-[17px] font-semibold rounded-md border transition-all duration-200 focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2 ${
         active
-          ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
-          : "bg-transparent text-gray-500 border-gray-300 hover:border-gray-500 hover:text-gray-700"
+          ? "bg-black text-white border-black hover:bg-gray-800 active:bg-gray-900"
+          : "bg-transparent text-gray-500 border-gray-300 hover:border-bvp-gold hover:text-black hover:bg-bvp-gold/10 active:bg-bvp-gold/20"
       }`}
       aria-pressed={active}
     >

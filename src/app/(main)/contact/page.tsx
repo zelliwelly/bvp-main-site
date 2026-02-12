@@ -161,21 +161,19 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="pt-24 bg-white border-b border-gray-200">
-        <div className="py-12 md:py-16 px-6 md:px-24">
-          <div className="max-w-[1400px] mx-auto">
-            <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
-              Get in touch
-            </p>
-            <h1 className="text-4xl md:text-5xl font-black leading-tight mb-4 font-display">
-              Contact Us
-            </h1>
-            <p className="text-lg text-gray-500">
-              For press inquiries, partnerships, speaking requests, or general
-              questions.
-            </p>
-          </div>
+      {/* Hero - Compact */}
+      <section className="pt-28 md:pt-32 pb-6 px-6 md:px-24 bg-white border-b border-gray-200">
+        <div className="max-w-[1400px] mx-auto">
+          <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
+            Get in touch
+          </p>
+          <h1 className="text-3xl md:text-4xl font-black leading-tight mb-2 font-display">
+            Contact Us
+          </h1>
+          <p className="text-base text-gray-500">
+            For press inquiries, partnerships, speaking requests, or general
+            questions.
+          </p>
         </div>
       </section>
 
@@ -183,12 +181,12 @@ export default function ContactPage() {
       <section>
         <div className="grid md:grid-cols-2">
           {/* Form Panel - First on mobile, Right on desktop */}
-          <div className="bg-gray-100 p-8 md:p-12 lg:p-16 order-1 md:order-2">
-            <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-8">
+          <div className="bg-gray-100 p-6 md:p-8 lg:p-10 order-1 md:order-2">
+            <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">
               Send a Message
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Honeypot field - hidden from humans, bots will fill it */}
               <div className="absolute -left-[9999px]" aria-hidden="true">
                 <label htmlFor="website">Website</label>
@@ -210,7 +208,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="contact-firstName"
-                    className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"
+                    className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
                   >
                     First Name
                   </label>
@@ -229,7 +227,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="contact-lastName"
-                    className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"
+                    className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
                   >
                     Last Name
                   </label>
@@ -251,7 +249,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="contact-email"
-                  className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"
+                  className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
                 >
                   Email *
                 </label>
@@ -273,7 +271,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="contact-topic"
-                  className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"
+                  className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
                 >
                   I'm reaching out about
                 </label>
@@ -300,7 +298,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="contact-message"
-                  className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-3"
+                  className="block text-xs font-bold uppercase tracking-widest text-gray-400 mb-2"
                 >
                   Message
                 </label>
@@ -317,7 +315,7 @@ export default function ContactPage() {
               </div>
 
               {/* Submit */}
-              <div className="pt-4">
+              <div className="pt-2">
                 <Button
                   type="submit"
                   variant="primary"
@@ -332,13 +330,13 @@ export default function ContactPage() {
 
           {/* Dark Panel - Second on mobile, Left on desktop */}
           <div
-            className="text-white p-8 md:p-12 lg:p-16 flex flex-col order-2 md:order-1"
+            className="text-white p-6 md:p-8 lg:p-10 flex flex-col order-2 md:order-1"
             style={{
               background: "linear-gradient(180deg, #3a3a3a 0%, #1a1a1a 100%)",
             }}
           >
             {/* Email Icon */}
-            <div className="mb-8">
+            <div className="mb-5">
               <svg
                 className="w-6 h-6 text-white"
                 fill="none"
@@ -356,8 +354,8 @@ export default function ContactPage() {
             </div>
 
             {/* Main Text */}
-            <div className="mb-6">
-              <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-6">
+            <div className="mb-4">
+              <h2 className="text-xl md:text-2xl font-bold leading-tight mb-4">
                 For press, partnerships, and general inquiries:
               </h2>
               <a
@@ -372,7 +370,7 @@ export default function ContactPage() {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-white/20 my-8" aria-hidden="true" />
+            <div className="border-t border-white/20 my-5" aria-hidden="true" />
 
             {/* Follow Section */}
             <div>

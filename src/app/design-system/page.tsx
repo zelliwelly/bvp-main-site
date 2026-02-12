@@ -58,6 +58,7 @@ export default function DesignSystemPage() {
           <a href="#section-padding" className="text-sm font-bold hover:text-bvp-gold whitespace-nowrap">Section Padding</a>
           <a href="#spacing-scale" className="text-sm font-bold hover:text-bvp-gold whitespace-nowrap">Spacing Scale</a>
           <a href="#typography" className="text-sm font-bold hover:text-bvp-gold whitespace-nowrap">Typography</a>
+          <a href="#ios-hig" className="text-sm font-bold hover:text-bvp-gold whitespace-nowrap">iOS HIG Mobile</a>
           <a href="#colors" className="text-sm font-bold hover:text-bvp-gold whitespace-nowrap">Colors</a>
           <a href="#components" className="text-sm font-bold hover:text-bvp-gold whitespace-nowrap">Components</a>
         </div>
@@ -324,10 +325,10 @@ export default function DesignSystemPage() {
             {/* Font Families */}
             <div className="grid md:grid-cols-3 gap-6 mb-12">
               <div className="bg-white border-4 border-black p-6">
-                <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Display</p>
-                <p className="text-3xl font-bold" style={{ fontFamily: 'Georgia, serif' }}>Alverata</p>
-                <p className="text-sm text-gray-500 mt-2">Headlines, titles</p>
-                <code className="text-xs font-mono">font-display</code>
+                <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Display / Headlines</p>
+                <p className="text-3xl font-bold font-gunterz">Gunterz</p>
+                <p className="text-sm text-gray-500 mt-2">Headlines, titles, CTAs</p>
+                <code className="text-xs font-mono">font-display / font-gunterz</code>
               </div>
               <div className="bg-white border-4 border-black p-6">
                 <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Body</p>
@@ -336,10 +337,80 @@ export default function DesignSystemPage() {
                 <code className="text-xs font-mono">font-body</code>
               </div>
               <div className="bg-white border-4 border-black p-6">
-                <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">CTA</p>
-                <p className="text-3xl font-bold" style={{ fontFamily: 'system-ui' }}>Linear Grotesk</p>
-                <p className="text-sm text-gray-500 mt-2">Buttons, labels</p>
-                <code className="text-xs font-mono">font-cta</code>
+                <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">CTA / Buttons</p>
+                <p className="text-3xl font-medium font-ontika">Ontika</p>
+                <p className="text-sm text-gray-500 mt-2">Buttons, labels, CTAs</p>
+                <code className="text-xs font-mono">font-cta / font-ontika</code>
+              </div>
+            </div>
+
+            {/* Gunterz Font Specimen */}
+            <div className="bg-white border-4 border-black mb-12">
+              <div className="p-6 border-b-2 border-black bg-bvp-gold">
+                <h3 className="font-bold font-gunterz text-xl">Gunterz Font Family</h3>
+                <p className="text-sm">Military-inspired display typeface</p>
+              </div>
+
+              <div className="divide-y-2 divide-black">
+                {/* Regular */}
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-mono text-gray-500">Regular (400)</span>
+                    <code className="text-xs font-mono bg-gray-100 px-2 py-1">font-normal</code>
+                  </div>
+                  <p className="font-gunterz font-normal text-4xl">BLACK VETERANS PROJECT</p>
+                  <p className="font-gunterz font-normal text-2xl mt-2">The quick brown fox jumps over the lazy dog</p>
+                </div>
+
+                {/* Regular Italic */}
+                <div className="p-6 bg-gray-50">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-mono text-gray-500">Regular Italic (400)</span>
+                    <code className="text-xs font-mono bg-gray-100 px-2 py-1">font-normal italic</code>
+                  </div>
+                  <p className="font-gunterz font-normal italic text-4xl">BLACK VETERANS PROJECT</p>
+                  <p className="font-gunterz font-normal italic text-2xl mt-2">The quick brown fox jumps over the lazy dog</p>
+                </div>
+
+                {/* Medium */}
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-mono text-gray-500">Medium (500)</span>
+                    <code className="text-xs font-mono bg-gray-100 px-2 py-1">font-medium</code>
+                  </div>
+                  <p className="font-gunterz font-medium text-4xl">BLACK VETERANS PROJECT</p>
+                  <p className="font-gunterz font-medium text-2xl mt-2">The quick brown fox jumps over the lazy dog</p>
+                </div>
+
+                {/* Bold */}
+                <div className="p-6 bg-gray-50">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-mono text-gray-500">Bold (700)</span>
+                    <code className="text-xs font-mono bg-gray-100 px-2 py-1">font-bold</code>
+                  </div>
+                  <p className="font-gunterz font-bold text-4xl">BLACK VETERANS PROJECT</p>
+                  <p className="font-gunterz font-bold text-2xl mt-2">The quick brown fox jumps over the lazy dog</p>
+                </div>
+
+                {/* Black */}
+                <div className="p-6">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-mono text-gray-500">Black (900)</span>
+                    <code className="text-xs font-mono bg-gray-100 px-2 py-1">font-black</code>
+                  </div>
+                  <p className="font-gunterz font-black text-4xl">BLACK VETERANS PROJECT</p>
+                  <p className="font-gunterz font-black text-2xl mt-2">The quick brown fox jumps over the lazy dog</p>
+                </div>
+
+                {/* Black on Dark */}
+                <div className="p-6 bg-black text-white">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="text-sm font-mono text-gray-400">Black (900) on Dark</span>
+                    <code className="text-xs font-mono bg-white/10 px-2 py-1">font-black</code>
+                  </div>
+                  <p className="font-gunterz font-black text-4xl">BLACK VETERANS PROJECT</p>
+                  <p className="font-gunterz font-black text-2xl mt-2 text-bvp-gold">REPARATIVE JUSTICE FOR BLACK VETERANS</p>
+                </div>
               </div>
             </div>
 
@@ -436,6 +507,154 @@ export default function DesignSystemPage() {
                   <p className="text-xs font-bold uppercase tracking-wider">
                     EYEBROW LABELS AND CATEGORY TAGS
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===================== iOS HIG MOBILE ===================== */}
+        <section id="ios-hig" className="py-12 md:py-16 lg:py-24 px-6 md:px-12 border-b-4 border-black bg-bvp-gold/10">
+          <div className="max-w-[1400px] mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">iOS HIG Mobile Guidelines</h2>
+            <p className="text-gray-600 mb-8">Apple Human Interface Guidelines for mobile accessibility</p>
+
+            {/* Text Sizing */}
+            <div className="mb-12">
+              <h3 className="text-xl font-bold mb-4">Interactive Text: 17px Minimum</h3>
+              <p className="text-gray-600 mb-6">All tappable text must be at least 17px on mobile devices.</p>
+
+              <div className="overflow-x-auto">
+                <table className="w-full border-4 border-black bg-white">
+                  <thead className="bg-black text-white">
+                    <tr>
+                      <th className="text-left p-4 font-mono">Element</th>
+                      <th className="text-left p-4 font-mono">Min Size</th>
+                      <th className="text-left p-4 font-mono">Tailwind</th>
+                      <th className="text-left p-4 font-mono">Example</th>
+                    </tr>
+                  </thead>
+                  <tbody className="font-mono text-sm">
+                    <tr className="border-b-2 border-black">
+                      <td className="p-4 font-bold">Button text</td>
+                      <td className="p-4 text-bvp-gold font-bold">17px</td>
+                      <td className="p-4">text-[17px]</td>
+                      <td className="p-4"><button className="text-[17px] font-bold underline">Submit</button></td>
+                    </tr>
+                    <tr className="border-b-2 border-black bg-gray-50">
+                      <td className="p-4 font-bold">Link text</td>
+                      <td className="p-4 text-bvp-gold font-bold">17px</td>
+                      <td className="p-4">text-[17px]</td>
+                      <td className="p-4"><a className="text-[17px] text-blue-600 underline">Read More</a></td>
+                    </tr>
+                    <tr className="border-b-2 border-black">
+                      <td className="p-4 font-bold">Navigation</td>
+                      <td className="p-4 text-bvp-gold font-bold">17px</td>
+                      <td className="p-4">text-[17px]</td>
+                      <td className="p-4"><span className="text-[17px] font-bold">Menu Item</span></td>
+                    </tr>
+                    <tr className="border-b-2 border-black bg-gray-50">
+                      <td className="p-4 font-bold">Form inputs</td>
+                      <td className="p-4 text-bvp-gold font-bold">16px</td>
+                      <td className="p-4">text-base</td>
+                      <td className="p-4"><span className="text-base">Prevents iOS zoom</span></td>
+                    </tr>
+                    <tr>
+                      <td className="p-4 font-bold">Labels (interactive)</td>
+                      <td className="p-4 text-bvp-gold font-bold">17px</td>
+                      <td className="p-4">text-[17px]</td>
+                      <td className="p-4"><label className="text-[17px]">Checkbox label</label></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Touch Targets */}
+            <div className="mb-12">
+              <h3 className="text-xl font-bold mb-4">Touch Targets: 44×44px Minimum</h3>
+              <p className="text-gray-600 mb-6">All interactive elements need 44×44 pixel minimum touch area.</p>
+
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-white border-4 border-black p-6">
+                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Buttons</p>
+                  <div className="bg-gray-100 p-4 flex items-center justify-center">
+                    <button className="px-6 py-3 min-h-[44px] bg-bvp-gold border-4 border-black text-[17px] font-bold">
+                      44px height
+                    </button>
+                  </div>
+                  <code className="text-xs font-mono text-gray-500 mt-2 block">min-h-[44px] text-[17px]</code>
+                </div>
+
+                <div className="bg-white border-4 border-black p-6">
+                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Form Inputs</p>
+                  <div className="bg-gray-100 p-4">
+                    <input
+                      type="text"
+                      placeholder="Input text"
+                      className="w-full px-4 py-3 min-h-[44px] text-base border-2 border-black"
+                    />
+                  </div>
+                  <code className="text-xs font-mono text-gray-500 mt-2 block">min-h-[44px] text-base</code>
+                </div>
+
+                <div className="bg-white border-4 border-black p-6">
+                  <p className="text-sm text-gray-500 uppercase tracking-wider mb-2">Icon Buttons</p>
+                  <div className="bg-gray-100 p-4 flex items-center justify-center">
+                    <button className="w-11 h-11 bg-black text-white flex items-center justify-center">
+                      <span>×</span>
+                    </button>
+                  </div>
+                  <code className="text-xs font-mono text-gray-500 mt-2 block">w-11 h-11 (44px)</code>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile-First Pattern */}
+            <div className="mb-12">
+              <h3 className="text-xl font-bold mb-4">Mobile-First Pattern</h3>
+              <p className="text-gray-600 mb-6">Use larger sizes on mobile, optionally reduce on desktop.</p>
+
+              <div className="bg-white border-4 border-black p-6">
+                <div className="space-y-4 font-mono text-sm">
+                  <div className="p-4 bg-gray-100 border-l-4 border-bvp-gold">
+                    <p className="font-bold text-black mb-1">Interactive text</p>
+                    <code>text-[17px] md:text-sm</code>
+                    <p className="text-gray-500 text-xs mt-1">17px on mobile → 14px on desktop</p>
+                  </div>
+                  <div className="p-4 bg-gray-100 border-l-4 border-bvp-gold">
+                    <p className="font-bold text-black mb-1">Form inputs</p>
+                    <code>text-base min-h-[44px]</code>
+                    <p className="text-gray-500 text-xs mt-1">16px prevents iOS Safari zoom</p>
+                  </div>
+                  <div className="p-4 bg-gray-100 border-l-4 border-bvp-gold">
+                    <p className="font-bold text-black mb-1">Touch targets</p>
+                    <code>min-h-[44px] md:min-h-0</code>
+                    <p className="text-gray-500 text-xs mt-1">44px on mobile, natural height on desktop</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Allowed Exceptions */}
+            <div>
+              <h3 className="text-xl font-bold mb-4">Non-Interactive (Can Be Smaller)</h3>
+              <div className="grid md:grid-cols-4 gap-4">
+                <div className="bg-white border-4 border-black p-4 text-center">
+                  <p className="text-xs uppercase tracking-wider">Eyebrow</p>
+                  <p className="font-mono text-sm text-gray-500 mt-1">12px (text-xs)</p>
+                </div>
+                <div className="bg-white border-4 border-black p-4 text-center">
+                  <p className="text-sm text-gray-500">Caption text</p>
+                  <p className="font-mono text-sm text-gray-500 mt-1">14px (text-sm)</p>
+                </div>
+                <div className="bg-white border-4 border-black p-4 text-center">
+                  <p className="text-xs text-gray-400">12:30 PM</p>
+                  <p className="font-mono text-sm text-gray-500 mt-1">Timestamp</p>
+                </div>
+                <div className="bg-white border-4 border-black p-4 text-center">
+                  <p className="text-sm text-gray-500">Metadata</p>
+                  <p className="font-mono text-sm text-gray-500 mt-1">14px (text-sm)</p>
                 </div>
               </div>
             </div>
@@ -582,17 +801,17 @@ export default function DesignSystemPage() {
               <div className="bg-gradient-to-b from-[#FEF7E0] to-white border-4 border-black p-8 mb-4">
                 <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Primary — Gold Pill (Light BG)</p>
                 <div className="flex flex-wrap gap-4 items-center mb-6">
-                  <button className="px-10 py-4 text-lg font-bold tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-white active:scale-95">
+                  <button className="font-ontika font-medium px-10 py-4 text-lg tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-white active:scale-95">
                     Donate
                   </button>
-                  <button className="px-8 py-3 text-base font-bold tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-white active:scale-95">
+                  <button className="font-ontika font-medium px-8 py-3 text-base tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-white active:scale-95">
                     Join Us
                   </button>
-                  <button className="px-6 py-2.5 text-base font-bold tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-white active:scale-95">
+                  <button className="font-ontika font-medium px-6 py-2.5 text-base tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-white active:scale-95">
                     Learn More
                   </button>
                   {/* Arrow Slide */}
-                  <button className="text-base font-bold tracking-wide text-black hover:text-[#FDC500] transition-all duration-300 active:scale-95 group flex items-center gap-3 relative">
+                  <button className="font-ontika font-medium text-base tracking-wide text-black hover:text-[#FDC500] transition-all duration-300 active:scale-95 group flex items-center gap-3 relative">
                     <span>Learn More</span>
                     <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -608,17 +827,17 @@ export default function DesignSystemPage() {
               <div className="bg-gradient-to-b from-[#1a1a1a] to-black border-4 border-black p-8 mb-6">
                 <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4">Primary — Gold Pill (Dark BG)</p>
                 <div className="flex flex-wrap gap-4 items-center mb-6">
-                  <button className="px-10 py-4 text-lg font-bold tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-black hover:text-[#FDC500] active:scale-95">
+                  <button className="font-ontika font-medium px-10 py-4 text-lg tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-black hover:text-[#FDC500] active:scale-95">
                     Donate
                   </button>
-                  <button className="px-8 py-3 text-base font-bold tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-black hover:text-[#FDC500] active:scale-95">
+                  <button className="font-ontika font-medium px-8 py-3 text-base tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-black hover:text-[#FDC500] active:scale-95">
                     Join Us
                   </button>
-                  <button className="px-6 py-2.5 text-base font-bold tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-black hover:text-[#FDC500] active:scale-95">
+                  <button className="font-ontika font-medium px-6 py-2.5 text-base tracking-wide rounded-full border-4 border-[#FDC500] bg-[#FDC500] text-black transition-all duration-300 hover:bg-black hover:text-[#FDC500] active:scale-95">
                     Learn More
                   </button>
                   {/* Arrow Slide */}
-                  <button className="text-base font-bold tracking-wide text-white hover:text-[#FDC500] transition-all duration-300 active:scale-95 group flex items-center gap-3 relative">
+                  <button className="font-ontika font-medium text-base tracking-wide text-white hover:text-[#FDC500] transition-all duration-300 active:scale-95 group flex items-center gap-3 relative">
                     <span>Learn More</span>
                     <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
@@ -643,6 +862,7 @@ export default function DesignSystemPage() {
               </div>
             </div>
 
+            
             {/* Cards */}
             <div className="mb-12">
               <h3 className="text-xl font-bold mb-4">Cards</h3>

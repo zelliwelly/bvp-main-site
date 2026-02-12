@@ -132,11 +132,14 @@ export function Hero({
           h-full
           max-w-[1400px]
           mx-auto
-          px-6 md:px-[92px]
-          pt-24 md:pt-28 lg:pt-32
-          pb-12 md:pb-16 lg:pb-24
           flex flex-col justify-end
         "
+        style={{
+          paddingLeft: 'clamp(1.5rem, 4vw, 5.75rem)',
+          paddingRight: 'clamp(1.5rem, 4vw, 5.75rem)',
+          paddingTop: 'clamp(6rem, 8vw, 8rem)',
+          paddingBottom: 'clamp(3rem, 6vw, 6rem)',
+        }}
       >
         {/* Debug: Show padding markers */}
         {showDebugSpacing && (
@@ -191,11 +194,8 @@ export function Hero({
 
           {/* CTA Buttons */}
           <motion.div
-            className="
-              flex flex-col sm:flex-row
-              gap-4
-              mt-8 md:mt-10 lg:mt-12
-            "
+            className="flex flex-col sm:flex-row gap-4"
+            style={{ marginTop: 'clamp(2rem, 4vw, 3rem)' }}
             initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -241,18 +241,15 @@ export function Hero({
       {/* Scroll Indicator — fades out on scroll, stays gone */}
       {!prefersReducedMotion && (
         <motion.div
-          className="
-            absolute
-            bottom-[calc(2rem+65px)] md:bottom-[calc(3rem+65px)] lg:bottom-[calc(4rem+65px)]
-            right-[76px] md:right-[82px]
-            z-10
-            flex flex-col items-center gap-2
-            pointer-events-none
-          "
+          className="absolute z-10 flex flex-col items-center gap-2 pointer-events-none"
+          style={{
+            bottom: 'calc(clamp(2rem, 4vw, 4rem) + 65px)',
+            right: 'clamp(4.75rem, 5vw, 5.125rem)',
+            opacity: useTransform(scrollYProgress, [0, 0.08], [1, 0]),
+          }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.6 }}
-          style={{ opacity: useTransform(scrollYProgress, [0, 0.08], [1, 0]) }}
         >
           <span className="text-white/60 text-xs font-mono uppercase tracking-widest">
             Scroll

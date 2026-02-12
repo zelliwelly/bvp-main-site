@@ -261,14 +261,14 @@ function MembershipCard({
             }
           : undefined
       }
-      className={`border-2 border-black p-8 transition-colors ${
+      className={`border-2 border-black p-8 transition-all duration-300 group/card ${
         !expanded
-          ? "cursor-pointer hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2"
-          : "cursor-default"
+          ? "cursor-pointer hover:border-bvp-gold hover:shadow-lg hover:shadow-bvp-gold/10 focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2"
+          : "cursor-default border-bvp-gold"
       }`}
       aria-expanded={expanded}
     >
-      <h2 className="text-[22px] font-extrabold text-black mb-3 font-display">
+      <h2 className="text-[22px] font-extrabold text-black mb-3 font-display group-hover/card:text-bvp-navy transition-colors">
         {title}
       </h2>
       <p className="text-[15px] leading-relaxed text-gray-600 mb-5">
@@ -276,14 +276,15 @@ function MembershipCard({
       </p>
 
       {!expanded && (
-        <span className="inline-flex items-center gap-1 text-[15px] font-bold text-black group">
+        <span className="relative inline-flex items-center gap-2 text-[15px] font-bold text-black group-hover/card:text-bvp-gold transition-colors">
           {linkText}
           <span
-            className="inline-block transition-transform group-hover:translate-x-1"
+            className="inline-block transition-all duration-300 group-hover/card:translate-x-1"
             aria-hidden="true"
           >
             →
           </span>
+          <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-bvp-gold group-hover/card:w-[calc(100%-1.5rem)] transition-all duration-300" />
         </span>
       )}
 
@@ -493,12 +494,18 @@ export default function JoinPage() {
             transition={{ duration: 0.3 }}
           >
             {/* Hero */}
-            <section className="pt-28 md:pt-32 pb-12 px-6 md:px-12 border-b border-gray-200">
-              <div className="max-w-[1400px] mx-auto">
-                <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-gray-400 mb-4">
+            <section className="relative h-[50vh] md:h-[60vh] flex items-end">
+              <img
+                src="/images/join-us-hero.jpg"
+                alt="Vietnam veteran and U.S. Army veteran walking together at a parade"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
+              <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-24 pb-12 w-full">
+                <p className="text-sm uppercase tracking-widest mb-4 text-white/60">
                   Join the Movement
                 </p>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight font-display">
+                <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
                   Why Join BVP as a Member?
                 </h1>
               </div>

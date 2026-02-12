@@ -61,6 +61,62 @@
 
 ---
 
+## iOS HIG MOBILE GUIDELINES
+
+### Interactive Text Minimum: 17px
+All interactive text (buttons, links, navigation) must be **17px minimum** on mobile to meet Apple Human Interface Guidelines.
+
+| Element | Minimum Size | Tailwind Class | Notes |
+|---------|-------------|----------------|-------|
+| Button text | 17px | `text-[17px]` | All interactive buttons |
+| Link text | 17px | `text-[17px]` | Tappable links |
+| Navigation | 17px | `text-[17px]` | Menu items, tabs |
+| Form labels | 17px | `text-[17px]` | Interactive labels |
+| Form inputs | 16px | `text-base` | Prevents iOS Safari zoom |
+
+### Mobile-First Pattern
+Use larger text on mobile, optionally reduce on desktop:
+```tsx
+// Interactive text: 17px on mobile, can reduce on desktop
+className="text-[17px] md:text-sm"
+
+// Form inputs: 16px minimum everywhere
+className="text-base"
+```
+
+### Touch Targets: 44×44px Minimum
+All interactive elements must have a minimum touch target of **44×44 pixels** on mobile.
+
+| Element | Implementation | Tailwind |
+|---------|---------------|----------|
+| Buttons | Height + padding | `min-h-[44px]` |
+| Links | Padding or min-height | `min-h-[44px] py-2` |
+| Form inputs | Height | `min-h-[44px]` or `min-h-[48px]` |
+| Icon buttons | Width + height | `w-11 h-11` (44px) |
+| Checkboxes | Touch wrapper | `w-11 h-11` |
+
+### Form Input Zoom Prevention
+iOS Safari zooms the page when focusing on inputs with text smaller than 16px. Always use:
+```tsx
+// Form inputs - 16px minimum
+className="text-base min-h-[44px]"
+
+// Select dropdowns
+className="text-base min-h-[44px]"
+
+// Textareas
+className="text-base"
+```
+
+### What CAN Be Smaller
+Non-interactive elements can use smaller sizes:
+- Eyebrow labels: 12px (`text-xs`)
+- Captions: 12-14px (`text-xs`, `text-sm`)
+- Timestamps: 12-14px
+- Static metadata: 14px
+
+---
+
 ## SPACING SYSTEM
 
 **Base Unit:** 4px

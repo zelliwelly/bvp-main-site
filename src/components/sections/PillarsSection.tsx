@@ -370,16 +370,32 @@ export default function PillarsSection() {
   ];
 
   return (
-    <section className="pt-12 md:pt-16 lg:pt-20 pb-24 md:pb-32 lg:pb-[140px] px-6 md:px-[92px]">
+    <section
+      style={{
+        paddingTop: 'clamp(3rem, 5vw, 5rem)',
+        paddingBottom: 'clamp(6rem, 10vw, 8.75rem)',
+        paddingLeft: 'clamp(1.5rem, 4vw, 5.75rem)',
+        paddingRight: 'clamp(1.5rem, 4vw, 5.75rem)',
+      }}
+    >
       <div className="max-w-[1400px] mx-auto">
         {/* Section Title */}
-        <h2 className="font-display font-bold text-black leading-tight mb-6 md:mb-8" style={{ fontSize: 'clamp(2rem, 1rem + 4vw, 3.5rem)' }}>
+        <h2
+          className="font-display font-bold text-black leading-tight"
+          style={{
+            fontSize: 'clamp(2rem, 1rem + 4vw, 3.5rem)',
+            marginBottom: 'clamp(1.5rem, 3vw, 2rem)',
+          }}
+        >
           Our Work
         </h2>
 
         {/* Section Intro */}
-        <div className="mb-12 md:mb-16">
-          <p className="text-lg md:text-xl lg:text-2xl text-black/80 max-w-3xl leading-relaxed">
+        <div style={{ marginBottom: 'clamp(3rem, 5vw, 4rem)' }}>
+          <p
+            className="text-black/80 max-w-3xl leading-relaxed"
+            style={{ fontSize: 'clamp(1.125rem, 1rem + 1vw, 1.5rem)' }}
+          >
             We advance reparative justice through a unified strategy that connects
             <span className="font-bold text-black"> impact litigation</span>,
             <span className="font-bold text-black"> narrative building</span>, and
@@ -388,7 +404,10 @@ export default function PillarsSection() {
         </div>
 
         {/* Pillar Cards */}
-        <div className="grid md:grid-cols-3 gap-2">
+        <div
+          className="grid gap-2"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))' }}
+        >
           {pillars.map((pillar) => (
             <PillarCard key={pillar.number} {...pillar} />
           ))}
