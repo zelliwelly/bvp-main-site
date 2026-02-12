@@ -255,7 +255,7 @@ export default function DonatePage() {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <section className="pt-24 min-h-screen">
         <div className="py-12 md:py-16 px-6 md:px-24">
           <div className="max-w-[1400px] mx-auto">
@@ -607,6 +607,6 @@ export default function DonatePage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

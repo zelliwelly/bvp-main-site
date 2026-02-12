@@ -3,8 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 
 // ============================================
@@ -274,9 +272,6 @@ function Timeline() {
 export default function AboutPage() {
   return (
     <>
-      <Header />
-
-      <main>
         {/* ============================================== */}
         {/* HERO */}
         {/* ============================================== */}
@@ -532,9 +527,6 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
     </>
   );
 }

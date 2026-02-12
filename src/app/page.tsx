@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 import { Hero } from '@/components/sections/Hero';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import PillarsSection from '@/components/sections/PillarsSection';
 import { NewsletterSection } from '@/components/sections/NewsletterSection';
 import { NewsletterBanner } from '@/components/sections/NewsletterBanner';
@@ -109,9 +107,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
-      
-      <main>
         {/* Hero Section */}
         <Hero
           headline="Reparative justice for Black veterans through litigation, narrative, and mobilization."
@@ -305,9 +300,6 @@ export default function Home() {
         {/* Newsletter Section */}
         <NewsletterSection />
 
-      </main>
-
-      <Footer />
 
       {/* Substack Redirect Modal */}
       <AnimatePresence>

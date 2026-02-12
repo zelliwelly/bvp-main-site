@@ -476,7 +476,7 @@ export default function JoinPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* ============================================
           VIEW: MAIN (Membership Options)
           ============================================ */}
@@ -1218,6 +1218,6 @@ export default function JoinPage() {
           </motion.div>
         )}
       </AnimatePresence>
-    </main>
+    </div>
   );
 }

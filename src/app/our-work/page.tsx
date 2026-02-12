@@ -2,8 +2,6 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { Button } from '@/components/ui/Button';
 
 // ============================================
@@ -304,9 +302,6 @@ export default function OurWorkPage() {
 
   return (
     <>
-      <Header />
-
-      <main>
         {/* ============================================== */}
         {/* HERO */}
         {/* ============================================== */}
@@ -559,9 +554,6 @@ export default function OurWorkPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
     </>
   );
 }

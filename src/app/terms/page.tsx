@@ -1,6 +1,6 @@
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="pt-24 bg-white border-b border-gray-200">
         <div className="py-12 md:py-16 px-6 md:px-24">
@@ -124,6 +124,6 @@ export default function TermsPage() {
           </p>
         </article>
       </section>
-    </main>
+    </div>
   );
 }
