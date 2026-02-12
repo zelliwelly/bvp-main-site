@@ -61,19 +61,20 @@ function StickySubNav({
 
   return (
     <nav
-      className="sticky top-12 z-40 h-20 bg-white shadow-md flex items-center lg:h-20"
+      className="sticky top-12 z-40 bg-white shadow-md flex items-center"
       style={{ boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)' }}
     >
       <div
         ref={navRef}
         className="max-w-[900px] mx-auto w-full flex px-4 lg:px-6 overflow-x-auto scrollbar-hide"
+        style={{ WebkitOverflowScrolling: 'touch' }}
       >
         {sections.map((section, index) => (
           <button
             key={section.id}
             data-section={section.id}
             onClick={() => onSectionClick(section.id)}
-            className={`relative px-4 lg:px-6 py-4 text-[10px] lg:text-[11px] font-bold tracking-[0.12em] uppercase whitespace-nowrap transition-colors flex-shrink-0 ${
+            className={`relative px-3 lg:px-5 min-h-[56px] text-[13px] lg:text-[14px] font-bold tracking-[0.08em] uppercase whitespace-nowrap transition-colors flex-shrink-0 flex items-center ${
               index === 0 ? 'pl-0' : ''
             } ${activeSection === section.id ? 'text-gray-900' : 'text-gray-400 hover:text-gray-900'}`}
             aria-current={activeSection === section.id ? 'true' : undefined}

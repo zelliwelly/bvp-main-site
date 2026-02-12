@@ -216,10 +216,10 @@ function FilterPill({ label, active, onClick }: FilterPillProps) {
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1.5 text-[11px] font-semibold rounded-[3px] border transition-colors focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2 ${
+      className={`px-4 py-2.5 min-h-[44px] text-[15px] font-semibold rounded-md border transition-colors focus-visible:ring-2 focus-visible:ring-bvp-gold focus-visible:ring-offset-2 ${
         active
           ? "bg-[#1a1a1a] text-white border-[#1a1a1a]"
-          : "bg-transparent text-gray-400 border-gray-300 hover:border-gray-500 hover:text-gray-600"
+          : "bg-transparent text-gray-500 border-gray-300 hover:border-gray-500 hover:text-gray-700"
       }`}
       aria-pressed={active}
     >
@@ -402,14 +402,14 @@ export default function PressPage() {
 
       {/* Filter Bar */}
       <div className="sticky top-[56px] md:top-[60px] z-30 bg-white border-b border-gray-200">
-        <div className="flex flex-wrap items-center gap-4 md:gap-6 px-6 md:px-24 py-4">
+        <div className="px-6 md:px-24 py-4 space-y-4 md:space-y-0 md:flex md:flex-wrap md:items-center md:gap-6">
           {/* Type Filters */}
           <div
             className="flex items-center gap-2 flex-wrap"
             role="group"
             aria-label="Filter by type"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-gray-300">
+            <span className="text-[13px] font-bold uppercase tracking-wider text-gray-400 mr-1">
               Type
             </span>
             {typeFilters.map((filter) => (
@@ -428,7 +428,7 @@ export default function PressPage() {
             role="group"
             aria-label="Filter by topic"
           >
-            <span className="text-xs font-bold uppercase tracking-widest text-gray-300">
+            <span className="text-[13px] font-bold uppercase tracking-wider text-gray-400 mr-1">
               Topic
             </span>
             {topicFilters.map((filter) => (
@@ -442,7 +442,7 @@ export default function PressPage() {
           </div>
 
           {/* Search */}
-          <div className="ml-auto">
+          <div className="w-full md:w-auto md:ml-auto">
             <label htmlFor="press-search" className="sr-only">
               Search archive
             </label>
@@ -452,13 +452,13 @@ export default function PressPage() {
               placeholder="Search archive..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="border border-gray-300 px-4 py-2 text-sm w-48 bg-transparent transition-colors focus:border-black focus:outline-none"
+              className="w-full md:w-56 border border-gray-300 px-4 py-3 min-h-[44px] text-[16px] bg-transparent transition-colors focus:border-black focus:outline-none rounded-md"
             />
           </div>
         </div>
 
         {/* Results Count */}
-        <div className="flex justify-between px-6 md:px-24 py-3 text-xs font-semibold text-gray-400 tracking-wide border-t border-gray-100">
+        <div className="flex justify-between px-6 md:px-24 py-3 text-[13px] font-semibold text-gray-400 tracking-wide border-t border-gray-100">
           <span>
             {filteredItems.length} RESULT
             {filteredItems.length !== 1 ? "S" : ""}
