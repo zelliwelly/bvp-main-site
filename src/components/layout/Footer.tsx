@@ -123,20 +123,19 @@ export function Footer() {
                 {/* Legal Links */}
                 <div className="flex items-center gap-3 text-[15px] text-white/80">
                   <Link href="/privacy" className="relative hover:text-white transition-colors group min-h-[44px] flex items-center">
-                    <span className="sm:hidden">PRIVACY</span>
+                    <span className="sm:hidden">Privacy</span>
                     <span className="hidden sm:inline">Privacy Policy</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FDC500] group-hover:w-full transition-all duration-300" />
                   </Link>
                   <span className="text-white/40">|</span>
                   <Link href="/terms" className="relative hover:text-white transition-colors group min-h-[44px] flex items-center">
-                    <span className="sm:hidden">TERMS</span>
+                    <span className="sm:hidden">Terms</span>
                     <span className="hidden sm:inline">Terms of Use</span>
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FDC500] group-hover:w-full transition-all duration-300" />
                   </Link>
                   <span className="text-white/40">|</span>
                   <Link href="/accessibility" className="relative hover:text-white transition-colors group min-h-[44px] flex items-center">
-                    <span className="sm:hidden">ACCESS</span>
-                    <span className="hidden sm:inline">Accessibility</span>
+                    Accessibility
                     <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#FDC500] group-hover:w-full transition-all duration-300" />
                   </Link>
                 </div>

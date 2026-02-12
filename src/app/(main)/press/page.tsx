@@ -405,40 +405,48 @@ export default function PressPage() {
         <div className="px-6 md:px-24 py-4 space-y-4 md:space-y-0 md:flex md:flex-wrap md:items-center md:gap-6">
           {/* Type Filters */}
           <div
-            className="flex items-center gap-2 flex-wrap"
             role="group"
             aria-label="Filter by type"
           >
-            <span className="text-[13px] font-bold uppercase tracking-wider text-gray-400 mr-1">
+            <span className="block mb-2 md:hidden text-[13px] font-bold uppercase tracking-wider text-gray-400">
               Type
             </span>
-            {typeFilters.map((filter) => (
-              <FilterPill
-                key={filter.value}
-                label={filter.label}
-                active={typeFilter === filter.value}
-                onClick={() => setTypeFilter(filter.value)}
-              />
-            ))}
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="hidden md:block text-[13px] font-bold uppercase tracking-wider text-gray-400 mr-1">
+                Type
+              </span>
+              {typeFilters.map((filter) => (
+                <FilterPill
+                  key={filter.value}
+                  label={filter.label}
+                  active={typeFilter === filter.value}
+                  onClick={() => setTypeFilter(filter.value)}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Topic Filters */}
           <div
-            className="flex items-center gap-2 flex-wrap"
             role="group"
             aria-label="Filter by topic"
           >
-            <span className="text-[13px] font-bold uppercase tracking-wider text-gray-400 mr-1">
+            <span className="block mb-2 md:hidden text-[13px] font-bold uppercase tracking-wider text-gray-400">
               Topic
             </span>
-            {topicFilters.map((filter) => (
-              <FilterPill
-                key={filter.value}
-                label={filter.label}
-                active={topicFilter === filter.value}
-                onClick={() => setTopicFilter(filter.value)}
-              />
-            ))}
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="hidden md:block text-[13px] font-bold uppercase tracking-wider text-gray-400 mr-1">
+                Topic
+              </span>
+              {topicFilters.map((filter) => (
+                <FilterPill
+                  key={filter.value}
+                  label={filter.label}
+                  active={topicFilter === filter.value}
+                  onClick={() => setTopicFilter(filter.value)}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Search */}
