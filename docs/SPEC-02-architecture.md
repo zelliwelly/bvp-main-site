@@ -5,18 +5,18 @@
 
 ## TECHNOLOGY STACK
 
-| Layer | Choice | Why |
-|-------|--------|-----|
-| **Framework** | Next.js 14 (App Router) | Industry standard, SEO-friendly, Vercel-optimized |
-| **Language** | TypeScript | Type safety, fewer bugs, better DX |
-| **Styling** | Tailwind CSS | Already in wireframe, utility-first, fast |
-| **CMS** | Sanity.io | Real-time previews, generous free tier, flexible |
-| **Hosting** | Vercel | Built for Next.js, instant deploys, preview URLs |
-| **Animation** | Framer Motion | Best React animation library |
-| **Forms** | Action Network API | Custom UI, member database, advocacy tools |
-| **Newsletter** | Zapier → Substack | Webhook integration |
-| **Donations** | Donately | Nonprofit-focused, handles PCI |
-| **Analytics** | Vercel Analytics + GA4 | Privacy-friendly + comprehensive |
+| Layer | Choice | Status | Why |
+|-------|--------|--------|-----|
+| **Framework** | Next.js 16 (App Router) | ✅ Active | Industry standard, SEO-friendly, Vercel-optimized |
+| **Language** | TypeScript | ✅ Active | Type safety, fewer bugs, better DX |
+| **Styling** | Tailwind CSS | ✅ Active | Utility-first, fast iteration |
+| **Animation** | Framer Motion | ✅ Active | Best React animation library |
+| **Hosting** | Vercel | ✅ Active | Built for Next.js, instant deploys, preview URLs |
+| **CMS** | Sanity.io | 🔜 Planned | Real-time previews, generous free tier, flexible |
+| **Forms** | Action Network API | 🔜 Planned | Custom UI, member database, advocacy tools |
+| **Newsletter** | Zapier → Substack | 🔜 Planned | Webhook integration |
+| **Donations** | Donately | 🔜 Planned | Nonprofit-focused, handles PCI |
+| **Analytics** | Vercel Analytics + GA4 | 🔜 Planned | Privacy-friendly + comprehensive |
 
 ---
 
@@ -26,55 +26,63 @@
 bvp-site/
 ├── src/
 │   ├── app/                      # Next.js App Router
-│   │   ├── layout.tsx            # Root layout
-│   │   ├── page.tsx              # Homepage
-│   │   ├── who-we-are/page.tsx
-│   │   ├── our-work/page.tsx
-│   │   ├── join/page.tsx
-│   │   ├── donate/page.tsx
-│   │   ├── faq/page.tsx
+│   │   ├── layout.tsx            # Root layout (global meta, fonts)
+│   │   ├── globals.css           # Global styles
+│   │   │
+│   │   ├── (main)/               # Route group for public pages (with Header/Footer)
+│   │   │   ├── layout.tsx        # Adds Header + Footer wrapper
+│   │   │   ├── page.tsx          # Homepage
+│   │   │   ├── about/            # About Us (was who-we-are)
+│   │   │   ├── our-work/
+│   │   │   ├── join/
+│   │   │   ├── donate/
+│   │   │   ├── contact/
+│   │   │   ├── press/
+│   │   │   ├── faq/
+│   │   │   ├── financials/
+│   │   │   ├── privacy/
+│   │   │   ├── terms/
+│   │   │   └── accessibility/
+│   │   │
+│   │   ├── admin/                # Admin dashboard (no Header/Footer)
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   └── admin.css
+│   │   │
 │   │   └── api/
-│   │       ├── newsletter/route.ts
-│   │       └── join/route.ts
+│   │       ├── contact/route.ts
+│   │       ├── feedback/route.ts
+│   │       └── newsletter/route.ts
 │   │
 │   ├── components/
 │   │   ├── ui/                   # Base components
 │   │   │   ├── Button.tsx
-│   │   │   ├── Card.tsx
-│   │   │   ├── Input.tsx
-│   │   │   ├── Section.tsx
-│   │   │   └── Accordion.tsx
+│   │   │   ├── Accordion.tsx
+│   │   │   ├── CookieConsent.tsx
+│   │   │   └── DebugOverlay.tsx
 │   │   ├── layout/
-│   │   │   ├── Header.tsx
-│   │   │   └── Footer.tsx
-│   │   ├── sections/             # Page sections
-│   │   │   ├── Hero.tsx
-│   │   │   ├── BlogFeed.tsx
-│   │   │   ├── TeamGrid.tsx
-│   │   │   └── StatsBar.tsx
-│   │   └── forms/
-│   │       ├── NewsletterForm.tsx
-│   │       └── StoryForm.tsx
+│   │   │   ├── Header.tsx        # Global nav with dropdowns
+│   │   │   └── Footer.tsx        # 4-column footer
+│   │   └── sections/             # Page sections
+│   │       ├── Hero.tsx
+│   │       ├── NewsletterBanner.tsx
+│   │       └── ...
+│   │
+│   ├── config/
+│   │   └── seo.ts                # Centralized SEO metadata for all pages
 │   │
 │   ├── lib/
-│   │   ├── sanity/
-│   │   │   ├── client.ts
-│   │   │   └── queries.ts
-│   │   ├── substack.ts
 │   │   └── utils.ts
 │   │
-│   └── styles/
-│       └── globals.css
+│   └── styles/                   # (moved to app/globals.css)
 │
 ├── public/
-│   ├── fonts/
-│   └── images/
+│   └── images/                   # Static images (logo, team photos, etc.)
 │
 ├── docs/                         # These spec files
 ├── tailwind.config.ts
-├── next.config.js
-├── .env.local                    # Secrets (gitignored)
-└── .env.example                  # Template
+├── next.config.ts
+└── package.json
 ```
 
 ---
@@ -84,25 +92,41 @@ bvp-site/
 ```bash
 # .env.local (NEVER COMMIT)
 
-# Sanity
+# Analytics (planned)
+NEXT_PUBLIC_GA_ID=G-xxxxx
+
+# Sanity CMS (planned)
 NEXT_PUBLIC_SANITY_PROJECT_ID=xxxxx
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_TOKEN=sk_xxxxx              # Server only
 
-# Action Network
+# Action Network (planned)
 ACTION_NETWORK_API_KEY=xxxxx           # Server only
 
-# Zapier
+# Zapier (planned)
 ZAPIER_NEWSLETTER_WEBHOOK=xxxxx        # Server only
 
-# Donately
+# Donately (planned)
 NEXT_PUBLIC_DONATELY_ID=xxxxx          # Public OK
-
-# Analytics
-NEXT_PUBLIC_GA_ID=G-xxxxx
 ```
 
 **Rule:** Anything without `NEXT_PUBLIC_` prefix stays server-side only.
+
+---
+
+## INTEGRATION STATUS
+
+| Integration | Status | Notes |
+|-------------|--------|-------|
+| Vercel Hosting | ✅ Live | Deployed at bvp-main-site.vercel.app |
+| SEO Meta Tags | ✅ Done | All 12 pages have title, description, OG, Twitter tags |
+| Cookie Consent | ✅ Done | GDPR-compliant banner with preferences |
+| Admin Dashboard | ✅ Done | Mock data, SEO overview at /admin |
+| Sanity CMS | 🔜 Next | Will replace hardcoded team/FAQ/content |
+| Donately | 🔜 Next | Will handle donations (currently mock form) |
+| Action Network | 🔜 Next | Will handle form submissions |
+| Google Analytics | 🔜 Next | Cookie consent ready, need GA ID |
+| Zapier/Substack | 🔜 Later | Newsletter integration |
 
 ---
 

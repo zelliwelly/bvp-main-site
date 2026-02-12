@@ -4,12 +4,26 @@ import { useState } from 'react';
 
 export function NewsletterBanner() {
   const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState(''); // Honeypot field
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
+
+    // Honeypot check - if filled, silently reject (bot detected)
+    if (honeypot) {
+      // Fake success to fool bots
+      setIsSubmitting(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        setEmail('');
+        setTimeout(() => setIsSuccess(false), 3000);
+      }, 1000);
+      return;
+    }
 
     setIsSubmitting(true);
     // TODO: Connect to Zapier/Substack backend
@@ -32,6 +46,20 @@ export function NewsletterBanner() {
         </p>
 
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+          {/* Honeypot field - hidden from humans, bots will fill it */}
+          <div className="absolute -left-[9999px]" aria-hidden="true">
+            <label htmlFor="nl-website">Website</label>
+            <input
+              type="text"
+              id="nl-website"
+              name="website"
+              value={honeypot}
+              onChange={(e) => setHoneypot(e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+
           <input
             type="email"
             placeholder="Your email address"

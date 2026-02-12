@@ -328,7 +328,7 @@ export default function OurWorkPage() {
         {/* ============================================== */}
         {/* WORK CONTENT */}
         {/* ============================================== */}
-        <section className="py-20 px-6 md:px-24">
+        <section className="pt-4 pb-20 px-6 md:px-24">
           <div className="max-w-[900px] mx-auto">
             {/* ============================================== */}
             {/* CASE FOR REPAIR */}

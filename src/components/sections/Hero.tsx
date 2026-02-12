@@ -53,7 +53,7 @@ interface HeroProps {
 
 export function Hero({
   headline = "We advance reparative justice for Black veterans and military families through litigation, narrative, and mobilization.",
-  backgroundImage = "/images/hero-bg.png",
+  backgroundImage = "/images/optimized/hero-bg.webp",
   showDebugSpacing = false,
 }: HeroProps) {
   const containerRef = useRef<HTMLElement>(null);

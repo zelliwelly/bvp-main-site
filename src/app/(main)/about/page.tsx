@@ -341,14 +341,14 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12">
               {founders.map((founder) => (
                 <article key={founder.name}>
-                  <div className="w-48 h-48 bg-gray-200 mb-6 flex items-center justify-center">
+                  <div className="w-[300px] h-[300px] bg-gray-200 mb-6 flex items-center justify-center">
                     {founder.image ? (
                       <Image
                         src={founder.image}
                         alt={founder.name}
-                        width={192}
-                        height={192}
-                        className="object-cover"
+                        width={300}
+                        height={300}
+                        className="object-cover w-full h-full"
                       />
                     ) : (
                       <span className="text-gray-500">[HEADSHOT]</span>
@@ -376,14 +376,14 @@ export default function AboutPage() {
             <div className="grid md:grid-cols-2 gap-12">
               {team.map((member) => (
                 <article key={member.name}>
-                  <div className="w-48 h-48 bg-gray-200 mb-6 flex items-center justify-center">
+                  <div className="w-[300px] h-[300px] bg-gray-200 mb-6 flex items-center justify-center">
                     {member.image ? (
                       <Image
                         src={member.image}
                         alt={member.name}
-                        width={192}
-                        height={192}
-                        className="object-cover"
+                        width={300}
+                        height={300}
+                        className="object-cover w-full h-full"
                       />
                     ) : (
                       <span className="text-gray-500">[HEADSHOT]</span>
@@ -469,7 +469,7 @@ export default function AboutPage() {
               Organizations advancing the work alongside us.
             </p>
 
-            <div className="grid grid-cols-3 gap-12 items-center">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
               {partners.map((partner) => (
                 <div key={partner.name} className="flex items-center justify-center">
                   <Image
@@ -477,8 +477,7 @@ export default function AboutPage() {
                     alt={partner.name}
                     width={200}
                     height={partner.height}
-                    className="max-h-12 w-auto grayscale opacity-70 hover:opacity-100 transition-opacity"
-                    style={{ height: 'auto', maxHeight: partner.height }}
+                    className="h-12 md:h-10 w-auto grayscale opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </div>
               ))}
@@ -503,23 +502,13 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-sm uppercase tracking-wide mb-4 opacity-60">Featured In</p>
-                <div className="grid grid-cols-5 gap-3 mb-3">
-                  {['BBC', 'NYT', 'Politico', 'WaPo', 'CBS'].map((outlet) => (
+                <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-3">
+                  {['BBC', 'NYT', 'Politico', 'WaPo', 'CBS', 'CNN', 'The Grio', 'Reuters', 'The Root', 'USA Today'].map((outlet) => (
                     <div
                       key={outlet}
-                      className="border border-white/30 p-3 text-center hover:border-white/60 transition-colors"
+                      className="border border-white/30 p-3 md:p-3 text-center hover:border-white/60 transition-colors"
                     >
-                      <span className="text-gray-400 text-xs">[{outlet}]</span>
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-5 gap-3">
-                  {['CNN', 'The Grio', 'Reuters', 'The Root', 'USA Today'].map((outlet) => (
-                    <div
-                      key={outlet}
-                      className="border border-white/30 p-3 text-center hover:border-white/60 transition-colors"
-                    >
-                      <span className="text-gray-400 text-xs">[{outlet}]</span>
+                      <span className="text-gray-400 text-xs md:text-xs">[{outlet}]</span>
                     </div>
                   ))}
                 </div>

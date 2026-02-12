@@ -50,11 +50,11 @@ const variants = {
     "bg-[#F44708] text-white border-[#F44708] hover:bg-white hover:text-[#F44708] hover:border-white",
 };
 
-// Size styles - Font sizes increased
+// Size styles - Mobile-first with 44px min touch target
 const sizes = {
-  sm: "px-6 py-2.5 text-base",
-  md: "px-8 py-3 text-lg",
-  lg: "px-10 py-4 text-xl",
+  sm: "px-6 py-3 md:py-2.5 text-base min-h-[44px] md:min-h-0",
+  md: "px-8 py-3.5 md:py-3 text-lg min-h-[48px] md:min-h-0",
+  lg: "px-10 py-4 text-xl min-h-[52px] md:min-h-0",
 };
 
 const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(

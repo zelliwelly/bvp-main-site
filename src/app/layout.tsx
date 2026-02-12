@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { DebugOverlay } from "@/components/ui/DebugOverlay";
 import { CookieConsent } from "@/components/ui/CookieConsent";
 import FeedbackWidget from "@/components/FeedbackWidget";
@@ -15,6 +13,13 @@ export const metadata: Metadata = {
     description: "Advancing reparative justice for Black veterans and military families.",
     type: "website",
   },
+  // Preconnect to CDN for faster resource loading
+  other: {
+    "link": [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "anonymous" },
+    ].map(l => JSON.stringify(l)).join(","),
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +28,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased bg-white text-black">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        {children}
         <CookieConsent />
         <DebugOverlay />
         <FeedbackWidget />

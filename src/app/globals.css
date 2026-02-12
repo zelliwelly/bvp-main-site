@@ -8,14 +8,22 @@
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Apple HIG: Support safe areas for notched devices */
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+    /* Dynamic Type: Allow text to scale with iOS settings */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   body {
     font-family: "Open Sans", system-ui, sans-serif;
-    font-size: 1rem;
+    /* Apple HIG: 17pt (17px) minimum for body text readability */
+    font-size: 1.0625rem; /* 17px */
     line-height: 1.6;
     color: #000;
     background-color: #fff;
+    /* Touch action optimization for iOS */
+    -webkit-tap-highlight-color: transparent;
   }
 
   /* Headlines default to display font */
@@ -36,26 +44,101 @@
     background-color: #FDC500;
     color: #000;
   }
+
+  /* ==========================================
+     REDUCED MOTION SUPPORT
+     Respects iOS "Reduce Motion" setting
+     ========================================== */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ==========================================
+     HIGH CONTRAST MODE SUPPORT
+     Respects iOS "Increase Contrast" setting
+     ========================================== */
+  @media (prefers-contrast: high) {
+    /* Remove transparency/glass effects */
+    .bg-white\/50,
+    [class*="bg-white/"] {
+      background-color: #fff !important;
+    }
+
+    .bg-black\/40,
+    [class*="bg-black/"] {
+      background-color: #000 !important;
+    }
+
+    /* Strengthen text contrast */
+    .text-white\/80,
+    .text-white\/70,
+    .text-white\/60,
+    [class*="text-white/"] {
+      color: #fff !important;
+    }
+
+    .text-black\/80,
+    .text-black\/70,
+    .text-black\/60,
+    .text-black\/50,
+    [class*="text-black/"] {
+      color: #000 !important;
+    }
+
+    /* Stronger borders */
+    .border-white\/40,
+    .border-white\/30,
+    .border-white\/20,
+    [class*="border-white/"] {
+      border-color: #fff !important;
+    }
+
+    .border-black\/10,
+    [class*="border-black/"] {
+      border-color: #000 !important;
+    }
+
+    /* Remove backdrop blur in high contrast */
+    .backdrop-blur-md,
+    .backdrop-blur-sm,
+    .backdrop-blur {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    /* Ensure focus states are extra visible */
+    :focus-visible {
+      outline-width: 3px !important;
+      outline-offset: 3px !important;
+    }
+  }
 }
 
 /* ============================================
    BVP COMPONENT CLASSES
    ============================================ */
 @layer components {
-  /* Section containers */
+  /* Section containers with safe area support */
   .section {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: max(1.5rem, env(safe-area-inset-left));
+    padding-right: max(1.5rem, env(safe-area-inset-right));
   }
-  
+
   @media (min-width: 768px) {
     .section {
       padding-top: 6rem;
       padding-bottom: 6rem;
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding-left: max(3rem, env(safe-area-inset-left));
+      padding-right: max(3rem, env(safe-area-inset-right));
     }
   }
 
@@ -94,6 +177,47 @@
     letter-spacing: 0.1em;
   }
 
+  /* BVP Button - Mobile-first with 44px min touch target */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    min-height: 44px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    border-radius: 9999px;
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    white-space: nowrap;
+    transition: all 200ms ease;
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    .btn {
+      padding: 0.625rem 1.5rem;
+      min-height: auto;
+    }
+  }
+
+  .btn:hover {
+    background-color: #000;
+    color: #FDC500;
+  }
+
+  .btn-primary {
+    background-color: #FDC500;
+  }
+
+  .btn-primary:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
   /* Stat number styling */
   .stat-number {
     font-family: Georgia, serif;
@@ -114,6 +238,21 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  /* Apple HIG: Touch feedback utilities */
+  .touch-feedback {
+    transition: opacity 150ms ease, transform 150ms ease;
+  }
+  .touch-feedback:active {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+
+  /* Minimum touch target utility */
+  .touch-target {
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .animation-delay-75 {

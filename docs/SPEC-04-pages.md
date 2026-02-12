@@ -6,14 +6,24 @@
 ## SITE MAP
 
 ```
+PUBLIC PAGES
 / ........................... Homepage
-/who-we-are ................. About (anchors: #founders, #team, #board, #partners)
-/our-work ................... Work (anchors: #case-for-repair, #litigation, #narrative, #mobilization)
-/join ....................... Story submission
+/about ...................... About Us (anchors: #mission, #founders, #team, #board, #partners)
+/our-work ................... Our Work (anchors: #case-for-repair, #litigation, #narrative, #mobilization)
+/join ....................... Membership / Story submission
 /donate ..................... Donations
+/contact .................... Contact form
+/press ...................... Press & Media coverage
 /faq ........................ FAQ accordion
+/financials ................. 990s and financial transparency
+
+LEGAL PAGES
 /privacy .................... Privacy policy
 /terms ...................... Terms of use
+/accessibility .............. Accessibility statement
+
+ADMIN (Internal)
+/admin ...................... Admin dashboard (SEO overview, metrics, tools)
 ```
 
 ---
@@ -50,7 +60,7 @@ First impression. Communicate mission, establish credibility, drive action.
 
 ---
 
-## WHO WE ARE ( /who-we-are )
+## ABOUT US ( /about )
 
 ### Purpose
 Establish credibility. Introduce team. Build trust.
@@ -264,21 +274,134 @@ Answer questions. Reduce support. SEO value.
 
 ---
 
+## CONTACT ( /contact )
+
+### Purpose
+Direct communication channel. Press inquiries, partnerships, general questions.
+
+### Sections
+
+**1. Page Header (Black bg)**
+- Title: "Contact Us"
+- Subtitle: "Get in touch with the BVP team"
+
+**2. Contact Form (White bg)**
+- Fields: First Name, Last Name, Email*, Topic (select), Message
+- Submit button
+- Submission: → Action Network (planned)
+
+### Data Sources
+- Form submits to Action Network (planned)
+
+---
+
+## PRESS ( /press )
+
+### Purpose
+Media resource page. Archived press coverage, media contact info.
+
+### Sections
+
+**1. Page Header (Black bg)**
+- Title: "Press & Media"
+
+**2. Press Coverage Grid**
+- Cards with publication logo, headline, date, link
+
+**3. Media Contact CTA**
+- Contact information for press inquiries
+
+### Data Sources
+- Press items: Sanity CMS (planned), currently hardcoded
+
+---
+
+## FINANCIALS ( /financials )
+
+### Purpose
+Transparency. 990 filings, annual reports, donor trust.
+
+### Sections
+
+**1. Page Header**
+- Title: "Financials & 990"
+- Subtitle: "Committed to transparency and accountability"
+
+**2. Documents Grid**
+- Links to PDF downloads of 990s and annual reports
+
+### Data Sources
+- Static PDFs in /public
+
+---
+
+## ACCESSIBILITY ( /accessibility )
+
+### Purpose
+Accessibility commitment statement. WCAG compliance info.
+
+### Content
+- Commitment to WCAG 2.1 Level AA
+- How to report accessibility issues
+- Contact information
+
+---
+
+## ADMIN ( /admin )
+
+### Purpose
+Internal dashboard for site management and monitoring.
+
+### Access
+- Route: /admin (no authentication currently)
+- Layout: Standalone (no global Header/Footer)
+
+### Sections
+
+**1. Site Metrics**
+- Visitors, pageviews, avg duration (mock data → Google Analytics planned)
+- Top pages bar chart
+
+**2. SEO Overview**
+- Summary stats (pages with title, description, OG, images)
+- Expandable rows for each page showing all meta tags
+- Status indicators for what's set vs missing
+
+**3. Deployments**
+- Recent Vercel deployments (mock data → Vercel API planned)
+
+**4. Recent Commits**
+- Git history (mock data → GitHub API planned)
+
+**5. Tools Grid**
+- Quick links to external tools (GA, Vercel, GitHub, Mailchimp, etc.)
+
+### Data Sources
+- Currently mock data
+- Planned: Vercel API, GitHub API, Google Analytics API
+
+---
+
 ## GLOBAL COMPONENTS
 
-### Header (All pages)
-- Fixed position
-- Black background with slight transparency
+### Header (All public pages)
+- Fixed position, hides on scroll down, shows on scroll up
+- Transparent background (no blur)
 - Logo left, nav center-right, Donate button right
-- Mobile: Hamburger → slide-out menu
+- Dropdown menus for About Us and Our Work
+- Skip-to-main link for accessibility
+- Mobile: Hamburger → slide-out frosted glass menu
 
-### Footer (All pages)
-- Dark gray (gray-900) background
-- 4-column layout:
-  - Brand + mission (2 cols)
-  - Quick links
-  - Contact + social
-- Bottom bar: Copyright, legal links, 501(c)(3) notice
+### Footer (All public pages)
+- Black background
+- 4-column layout: About Us, Our Work, Resources, Take Action
+- Bottom bar: Logo, copyright, 501(c)(3) notice, legal links
+- Social icons with accessible labels
+
+### Cookie Consent
+- Bottom banner on first visit
+- Options: Necessary (always on), Analytics, Marketing
+- Saves preferences to localStorage
 
 ---
 

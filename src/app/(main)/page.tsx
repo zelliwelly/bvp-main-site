@@ -184,9 +184,12 @@ export default function Home() {
                 {/* Image container with shadow and lift */}
                 <div className="relative aspect-[16/10] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-1">
                   <img
-                    src="/test.png"
+                    src="/images/optimized/featured-conley-monk.webp"
                     alt="Conley Monk"
                     className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                   />
                   {/* Subtle overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -247,12 +250,16 @@ export default function Home() {
                 })}
                 className="group bg-white rounded-lg shadow-[0_4px_20px_rgba(0,0,0,0.15)] p-5 flex gap-5 transition-all duration-300 text-left"
               >
-                {/* Image */}
-                <div className="w-32 h-32 flex-shrink-0 bg-gray-100 overflow-hidden">
+                {/* Image - Optimized WebP */}
+                <div className="w-32 h-32 flex-shrink-0 bg-gray-100 overflow-hidden relative">
                   <img
-                    src="/images/conley-monk.png"
+                    src="/images/optimized/conley-monk.webp"
                     alt="Veteran with American Legion certificate"
                     className="w-full h-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width={128}
+                    height={128}
                   />
                 </div>
                 {/* Content */}

@@ -13,6 +13,8 @@ interface ContactFormData {
   email: string;
   topic: ContactTopic;
   message: string;
+  // Honeypot field - should always be empty (bots fill it, humans don't see it)
+  website: string;
 }
 
 // ============================================
@@ -52,6 +54,7 @@ export default function ContactPage() {
     email: "",
     topic: "",
     message: "",
+    website: "", // Honeypot - must stay empty
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -68,9 +71,21 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot check - if filled, silently reject (bot detected)
+    if (formData.website) {
+      // Fake success to fool bots
+      setIsSubmitting(true);
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      setIsSubmitting(false);
+      setSubmitted(true);
+      return;
+    }
+
     setIsSubmitting(true);
 
     // Simulate form submission
+    // TODO: Connect to Action Network
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     setIsSubmitting(false);
@@ -242,6 +257,22 @@ export default function ContactPage() {
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot field - hidden from humans, bots will fill it */}
+              <div className="absolute -left-[9999px]" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  value={formData.website}
+                  onChange={(e) =>
+                    setFormData((f) => ({ ...f, website: e.target.value }))
+                  }
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               {/* Name Fields */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div>
