@@ -383,16 +383,22 @@ export default function PressPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-24 bg-white border-b border-gray-200">
-        <div className="py-12 md:py-16 px-6 md:px-24">
+      <section className="bg-white border-b border-gray-200">
+        <div style={{ padding: 'clamp(6rem, 10vw, 6rem) clamp(1.5rem, 5vw, 6rem) clamp(2rem, 5vw, 4rem)' }}>
           <div className="max-w-[1400px] mx-auto">
             <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
               External coverage
             </p>
-            <h1 className="text-4xl md:text-5xl font-black leading-tight mb-4 font-display">
+            <h1
+              className="font-black leading-tight mb-4 font-display"
+              style={{ fontSize: 'clamp(1.75rem, 1rem + 3.5vw, 3rem)' }}
+            >
               Archived Press
             </h1>
-            <p className="text-lg text-gray-500 max-w-2xl">
+            <p
+              className="text-gray-500 max-w-2xl"
+              style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.125rem)' }}
+            >
               Coverage of Black Veterans Project's advocacy, litigation, and the
               movement for repair.
             </p>
@@ -402,7 +408,10 @@ export default function PressPage() {
 
       {/* Filter Bar */}
       <div className="sticky top-[56px] md:top-[60px] z-30 bg-white border-b border-gray-200">
-        <div className="px-6 md:px-24 py-4 space-y-4 md:space-y-0 md:flex md:flex-wrap md:items-center md:gap-6">
+        <div
+          className="space-y-4 md:space-y-0 md:flex md:flex-wrap md:items-center md:gap-6"
+          style={{ padding: 'clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 5vw, 6rem)' }}
+        >
           {/* Type Filters */}
           <div
             role="group"
@@ -466,7 +475,10 @@ export default function PressPage() {
         </div>
 
         {/* Results Count */}
-        <div className="flex justify-between px-6 md:px-24 py-3 text-[13px] font-semibold text-gray-400 tracking-wide border-t border-gray-100">
+        <div
+          className="flex justify-between py-3 text-[13px] font-semibold text-gray-400 tracking-wide border-t border-gray-100"
+          style={{ padding: '0.75rem clamp(1.5rem, 5vw, 6rem)' }}
+        >
           <span>
             {filteredItems.length} RESULT
             {filteredItems.length !== 1 ? "S" : ""}
@@ -477,7 +489,10 @@ export default function PressPage() {
 
       {/* Press Feed */}
       <section className="bg-gray-100">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-24 pb-24">
+        <div
+          className="max-w-[1400px] mx-auto"
+          style={{ padding: '0 clamp(1.5rem, 5vw, 6rem) clamp(3rem, 8vw, 6rem)' }}
+        >
           {groupedByYear.length > 0 ? (
             groupedByYear.map(([year, items]) => (
               <div key={year}>

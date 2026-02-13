@@ -166,9 +166,22 @@ function Timeline() {
   }, []);
 
   return (
-    <section className="py-20 px-6 md:px-24 bg-gray-100">
+    <section
+      className="bg-gray-100"
+      style={{
+        padding: 'clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 6rem)',
+      }}
+    >
       <div className="max-w-[1400px] mx-auto">
-        <h2 className="font-display text-4xl font-bold mb-16 uppercase">Our Work</h2>
+        <h2
+          className="font-display font-bold uppercase"
+          style={{
+            fontSize: 'clamp(1.75rem, 1rem + 3vw, 2.5rem)',
+            marginBottom: 'clamp(2rem, 5vw, 4rem)',
+          }}
+        >
+          Our Work
+        </h2>
 
         {/* Mobile Timeline */}
         <div className="block lg:hidden">
@@ -277,7 +290,8 @@ export default function AboutPage() {
         {/* ============================================== */}
         <section
           id="mission"
-          className="relative h-[70vh] flex items-end scroll-mt-20"
+          className="relative flex items-end scroll-mt-20"
+          style={{ height: 'clamp(50vh, 60vw, 70vh)' }}
         >
           <img
             src="/images/who-we-are.jpg"
@@ -285,9 +299,15 @@ export default function AboutPage() {
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
-          <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-24 pb-16 w-full">
+          <div
+            className="relative z-10 max-w-[1400px] mx-auto w-full"
+            style={{ padding: 'clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 6rem)' }}
+          >
             <p className="text-sm uppercase tracking-widest mb-4 text-white/60">Who We Are</p>
-            <h1 className="font-display text-4xl md:text-6xl font-bold text-white">
+            <h1
+              className="font-display font-bold text-white"
+              style={{ fontSize: 'clamp(2rem, 1.5rem + 4vw, 3.75rem)' }}
+            >
               Building the Case for Repair
             </h1>
           </div>
@@ -296,23 +316,35 @@ export default function AboutPage() {
         {/* ============================================== */}
         {/* MISSION */}
         {/* ============================================== */}
-        <section className="py-20 px-6 md:px-24">
+        <section style={{ padding: 'clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 6rem)' }}>
           <div className="max-w-[1400px] mx-auto">
             <div className="max-w-4xl">
-              <p className="text-xl leading-relaxed mb-6">
+              <p
+                className="leading-relaxed"
+                style={{ fontSize: 'clamp(1.125rem, 0.9rem + 1vw, 1.25rem)', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}
+              >
                 The Black Veterans Project leverages research, narrative storytelling, public
                 advocacy, and impact litigation to redress the federal government's long history of
                 racism and discrimination against Black veterans and their families.
               </p>
-              <p className="text-xl leading-relaxed mb-6">
+              <p
+                className="leading-relaxed"
+                style={{ fontSize: 'clamp(1.125rem, 0.9rem + 1vw, 1.25rem)', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}
+              >
                 BVP represents the first comprehensive effort to pursue reparative justice for Black
                 service members who have been unjustly denied their civil rights and benefits.
               </p>
-              <p className="text-xl leading-relaxed mb-6">
+              <p
+                className="leading-relaxed"
+                style={{ fontSize: 'clamp(1.125rem, 0.9rem + 1vw, 1.25rem)', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}
+              >
                 Join us as we build the collective power to demand accountability, advance policy
                 change, and achieve reparations for Black veterans in America.
               </p>
-              <p className="text-lg text-gray-600">
+              <p
+                className="text-gray-600"
+                style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.125rem)' }}
+              >
                 BVP is a 501(c)(3) nonprofit organization.
               </p>
             </div>
@@ -327,20 +359,41 @@ export default function AboutPage() {
         {/* ============================================== */}
         {/* FOUNDERS */}
         {/* ============================================== */}
-        <section id="founders" className="py-20 px-6 md:px-24 bg-gray-100 scroll-mt-20">
+        <section
+          id="founders"
+          className="bg-gray-100 scroll-mt-20"
+          style={{ padding: 'clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 6rem)' }}
+        >
           <div className="max-w-[1400px] mx-auto">
-            <h2 className="font-display text-4xl font-bold mb-8 uppercase">Our Founders</h2>
-            <div className="max-w-4xl mb-16">
-              <p className="text-xl leading-relaxed text-gray-500">
+            <h2
+              className="font-display font-bold uppercase"
+              style={{ fontSize: 'clamp(1.75rem, 1rem + 3vw, 2.5rem)', marginBottom: 'clamp(1.5rem, 3vw, 2rem)' }}
+            >
+              Our Founders
+            </h2>
+            <div className="max-w-4xl" style={{ marginBottom: 'clamp(2rem, 5vw, 4rem)' }}>
+              <p
+                className="leading-relaxed text-gray-500"
+                style={{ fontSize: 'clamp(1.125rem, 0.9rem + 1vw, 1.25rem)' }}
+              >
                 Four veterans united by a common mission: to secure reparative justice for Black
                 service members.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12">
+            <div
+              className="grid"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+                gap: 'clamp(2rem, 4vw, 3rem)',
+              }}
+            >
               {founders.map((founder) => (
                 <article key={founder.name}>
-                  <div className="w-[300px] h-[300px] bg-gray-200 mb-6 flex items-center justify-center">
+                  <div
+                    className="bg-gray-200 flex items-center justify-center aspect-square"
+                    style={{ maxWidth: '300px', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}
+                  >
                     {founder.image ? (
                       <Image
                         src={founder.image}
@@ -353,7 +406,12 @@ export default function AboutPage() {
                       <span className="text-gray-500">[HEADSHOT]</span>
                     )}
                   </div>
-                  <h3 className="text-2xl font-bold mb-1">{founder.name}</h3>
+                  <h3
+                    className="font-bold mb-1"
+                    style={{ fontSize: 'clamp(1.25rem, 1rem + 1vw, 1.5rem)' }}
+                  >
+                    {founder.name}
+                  </h3>
                   <p className="text-base text-gray-500 mb-4">{founder.role}</p>
                   <p className="text-base leading-relaxed text-gray-700">{founder.bio}</p>
                 </article>
@@ -365,17 +423,38 @@ export default function AboutPage() {
         {/* ============================================== */}
         {/* TEAM */}
         {/* ============================================== */}
-        <section id="team" className="py-20 px-6 md:px-24 scroll-mt-20">
+        <section
+          id="team"
+          className="scroll-mt-20"
+          style={{ padding: 'clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 6rem)' }}
+        >
           <div className="max-w-[1400px] mx-auto">
-            <h2 className="font-display text-4xl font-bold mb-4 uppercase">Our Team</h2>
-            <p className="text-xl text-gray-600 mb-12">
+            <h2
+              className="font-display font-bold uppercase"
+              style={{ fontSize: 'clamp(1.75rem, 1rem + 3vw, 2.5rem)', marginBottom: 'clamp(0.75rem, 2vw, 1rem)' }}
+            >
+              Our Team
+            </h2>
+            <p
+              className="text-gray-600"
+              style={{ fontSize: 'clamp(1.125rem, 0.9rem + 1vw, 1.25rem)', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}
+            >
               The people building the case for repair.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-12">
+            <div
+              className="grid"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+                gap: 'clamp(2rem, 4vw, 3rem)',
+              }}
+            >
               {team.map((member) => (
                 <article key={member.name}>
-                  <div className="w-[300px] h-[300px] bg-gray-200 mb-6 flex items-center justify-center">
+                  <div
+                    className="bg-gray-200 flex items-center justify-center aspect-square"
+                    style={{ maxWidth: '300px', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}
+                  >
                     {member.image ? (
                       <Image
                         src={member.image}
@@ -388,7 +467,12 @@ export default function AboutPage() {
                       <span className="text-gray-500">[HEADSHOT]</span>
                     )}
                   </div>
-                  <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
+                  <h3
+                    className="font-bold mb-1"
+                    style={{ fontSize: 'clamp(1.25rem, 1rem + 1vw, 1.5rem)' }}
+                  >
+                    {member.name}
+                  </h3>
                   {member.bio && (
                     <div className="mt-4 space-y-4">
                       {member.bio.split('\n\n').map((paragraph, i) => (
@@ -407,15 +491,31 @@ export default function AboutPage() {
         {/* ============================================== */}
         {/* BOARD */}
         {/* ============================================== */}
-        <section id="board" className="py-20 px-6 md:px-24 bg-gray-100 scroll-mt-20">
+        <section
+          id="board"
+          className="bg-gray-100 scroll-mt-20"
+          style={{ padding: 'clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 6rem)' }}
+        >
           <div className="max-w-[1400px] mx-auto">
-            <h2 className="font-display text-4xl font-bold mb-12 uppercase">Board of Directors</h2>
+            <h2
+              className="font-display font-bold uppercase"
+              style={{ fontSize: 'clamp(1.75rem, 1rem + 3vw, 2.5rem)', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}
+            >
+              Board of Directors
+            </h2>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div
+              className="grid"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+                gap: 'clamp(1.5rem, 3vw, 2rem)',
+              }}
+            >
               {board.map((member) => (
                 <article
                   key={member.name}
-                  className="flex gap-6 items-start border-2 border-black p-6 bg-white"
+                  className="flex gap-4 items-start border-2 border-black bg-white"
+                  style={{ padding: 'clamp(1rem, 3vw, 1.5rem)' }}
                 >
                   <div className="w-24 h-24 bg-gray-200 border-2 border-black flex-shrink-0 flex items-center justify-center">
                     {member.image ? (
@@ -431,7 +531,12 @@ export default function AboutPage() {
                     )}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                    <h3
+                      className="font-bold mb-1"
+                      style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.25rem)' }}
+                    >
+                      {member.name}
+                    </h3>
                     {member.title && (
                       <p className="text-base text-gray-600 mb-2">{member.title}</p>
                     )}
@@ -459,16 +564,29 @@ export default function AboutPage() {
         {/* ============================================== */}
         {/* PARTNERS */}
         {/* ============================================== */}
-        <section id="partners" className="py-20 px-6 md:px-24 scroll-mt-20">
+        <section
+          id="partners"
+          className="scroll-mt-20"
+          style={{ padding: 'clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 6rem)' }}
+        >
           <div className="max-w-[1400px] mx-auto">
-            <h2 className="font-display text-4xl font-bold mb-4 uppercase text-center">
+            <h2
+              className="font-display font-bold uppercase text-center"
+              style={{ fontSize: 'clamp(1.75rem, 1rem + 3vw, 2.5rem)', marginBottom: 'clamp(0.75rem, 2vw, 1rem)' }}
+            >
               Our Partners
             </h2>
-            <p className="text-xl text-gray-600 mb-12 text-center">
+            <p
+              className="text-gray-600 text-center"
+              style={{ fontSize: 'clamp(1.125rem, 0.9rem + 1vw, 1.25rem)', marginBottom: 'clamp(2rem, 5vw, 3rem)' }}
+            >
               Organizations advancing the work alongside us.
             </p>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+            <div
+              className="flex flex-wrap items-center justify-center"
+              style={{ gap: 'clamp(2rem, 5vw, 4rem)' }}
+            >
               {partners.map((partner) => (
                 <div key={partner.name} className="flex items-center justify-center">
                   <Image
@@ -476,7 +594,8 @@ export default function AboutPage() {
                     alt={partner.name}
                     width={200}
                     height={partner.height}
-                    className="h-12 md:h-10 w-auto grayscale opacity-70 hover:opacity-100 transition-opacity"
+                    className="w-auto grayscale opacity-70 hover:opacity-100 transition-opacity"
+                    style={{ height: 'clamp(2.5rem, 4vw, 3rem)' }}
                   />
                 </div>
               ))}
@@ -487,12 +606,29 @@ export default function AboutPage() {
         {/* ============================================== */}
         {/* PRESS CTA */}
         {/* ============================================== */}
-        <section className="py-20 px-6 md:px-24 bg-black text-white">
+        <section
+          className="bg-black text-white"
+          style={{ padding: 'clamp(3rem, 8vw, 5rem) clamp(1.5rem, 5vw, 6rem)' }}
+        >
           <div className="max-w-[1400px] mx-auto">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div
+              className="grid items-center"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
+                gap: 'clamp(2rem, 5vw, 4rem)',
+              }}
+            >
               <div>
-                <h2 className="font-display text-4xl font-bold mb-6">Press & Media</h2>
-                <p className="text-xl leading-relaxed mb-8 opacity-80">
+                <h2
+                  className="font-display font-bold"
+                  style={{ fontSize: 'clamp(1.75rem, 1rem + 3vw, 2.5rem)', marginBottom: 'clamp(1rem, 3vw, 1.5rem)' }}
+                >
+                  Press & Media
+                </h2>
+                <p
+                  className="leading-relaxed opacity-80"
+                  style={{ fontSize: 'clamp(1.125rem, 0.9rem + 1vw, 1.25rem)', marginBottom: 'clamp(1.5rem, 4vw, 2rem)' }}
+                >
                   For press inquiries, interview requests, or media resources.
                 </p>
                 <Button href="/contact" variant="white" size="lg">
@@ -501,13 +637,20 @@ export default function AboutPage() {
               </div>
               <div>
                 <p className="text-sm uppercase tracking-wide mb-4 opacity-60">Featured In</p>
-                <div className="grid grid-cols-3 md:grid-cols-5 gap-2 md:gap-3">
+                <div
+                  className="grid"
+                  style={{
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(60px, 1fr))',
+                    gap: 'clamp(0.5rem, 1vw, 0.75rem)',
+                  }}
+                >
                   {['BBC', 'NYT', 'Politico', 'WaPo', 'CBS', 'CNN', 'The Grio', 'Reuters', 'The Root', 'USA Today'].map((outlet) => (
                     <div
                       key={outlet}
-                      className="border border-white/30 p-3 md:p-3 text-center hover:border-white/60 transition-colors"
+                      className="border border-white/30 text-center hover:border-white/60 transition-colors"
+                      style={{ padding: 'clamp(0.5rem, 2vw, 0.75rem)' }}
                     >
-                      <span className="text-gray-400 text-xs md:text-xs">[{outlet}]</span>
+                      <span className="text-gray-400 text-xs">[{outlet}]</span>
                     </div>
                   ))}
                 </div>

@@ -494,18 +494,27 @@ export default function JoinPage() {
             transition={{ duration: 0.3 }}
           >
             {/* Hero */}
-            <section className="relative h-[50vh] md:h-[60vh] flex items-end">
+            <section
+              className="relative flex items-end"
+              style={{ height: 'clamp(40vh, 50vw, 60vh)' }}
+            >
               <img
                 src="/images/join-us-hero.jpg"
                 alt="Vietnam veteran and U.S. Army veteran walking together at a parade"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70" />
-              <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-24 pb-12 w-full">
+              <div
+                className="relative z-10 max-w-[1400px] mx-auto w-full"
+                style={{ padding: 'clamp(2rem, 4vw, 3rem) clamp(1.5rem, 5vw, 6rem)' }}
+              >
                 <p className="text-sm uppercase tracking-widest mb-4 text-white/60">
                   Join the Movement
                 </p>
-                <h1 className="font-display text-4xl md:text-5xl font-bold text-white">
+                <h1
+                  className="font-display font-bold text-white"
+                  style={{ fontSize: 'clamp(1.75rem, 1rem + 3.5vw, 3rem)' }}
+                >
                   Why Join BVP as a Member?
                 </h1>
               </div>
@@ -513,9 +522,15 @@ export default function JoinPage() {
 
             {/* Two-Column Layout */}
             <section className="border-b border-gray-200">
-              <div className="max-w-[1400px] mx-auto grid md:grid-cols-2">
+              <div
+                className="max-w-[1400px] mx-auto grid"
+                style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))' }}
+              >
                 {/* Left Column - Description */}
-                <div className="p-8 md:p-12 md:border-r border-gray-200">
+                <div
+                  className="md:border-r border-gray-200"
+                  style={{ padding: 'clamp(1.5rem, 4vw, 3rem)' }}
+                >
                   <div className="space-y-5">
                     <p className="text-[17px] leading-relaxed text-gray-700">
                       BVP is building the first comprehensive movement for
@@ -552,7 +567,10 @@ export default function JoinPage() {
                 </div>
 
                 {/* Right Column - Membership Cards */}
-                <div className="p-8 md:p-12 flex flex-col gap-6">
+                <div
+                  className="flex flex-col gap-6"
+                  style={{ padding: 'clamp(1.5rem, 4vw, 3rem)' }}
+                >
                   <p className="text-xs font-bold uppercase tracking-[0.08em] text-gray-400">
                     Membership Categories
                   </p>
@@ -699,19 +717,28 @@ export default function JoinPage() {
             transition={{ duration: 0.3 }}
           >
             {/* Hero */}
-            <section className="pt-28 md:pt-32 pb-12 px-6 md:px-12 border-b border-gray-200">
+            <section
+              className="border-b border-gray-200"
+              style={{ padding: 'clamp(6rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem)' }}
+            >
               <div className="max-w-[1400px] mx-auto">
                 <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-gray-400 mb-4">
                   Join Us
                 </p>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight font-display">
+                <h1
+                  className="font-extrabold text-black leading-tight font-display"
+                  style={{ fontSize: 'clamp(1.75rem, 1rem + 3.5vw, 3rem)' }}
+                >
                   Become an Advocate
                 </h1>
               </div>
             </section>
 
             {/* Form Container */}
-            <section className="max-w-3xl px-6 md:px-12 py-12">
+            <section
+              className="max-w-3xl"
+              style={{ padding: 'clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 3rem)' }}
+            >
               <button
                 onClick={() => handleViewChange("main")}
                 className="text-[17px] font-semibold text-gray-400 hover:text-black transition-colors mb-8 flex items-center gap-1 min-h-[44px]"
@@ -1179,19 +1206,25 @@ export default function JoinPage() {
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
             {/* Hero */}
-            <section className="pt-28 md:pt-32 pb-12 px-6 md:px-12 border-b border-gray-200">
+            <section
+              className="border-b border-gray-200"
+              style={{ padding: 'clamp(6rem, 10vw, 8rem) clamp(1.5rem, 4vw, 3rem) clamp(2rem, 4vw, 3rem)' }}
+            >
               <div className="max-w-[1400px] mx-auto">
                 <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-gray-400 mb-4">
                   Join Us
                 </p>
-                <h1 className="text-4xl md:text-5xl font-extrabold text-black leading-tight font-display">
+                <h1
+                  className="font-extrabold text-black leading-tight font-display"
+                  style={{ fontSize: 'clamp(1.75rem, 1rem + 3.5vw, 3rem)' }}
+                >
                   Welcome to the Movement
                 </h1>
               </div>
             </section>
 
             {/* Success Message */}
-            <section className="px-6 md:px-12 py-12">
+            <section style={{ padding: 'clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 3rem)' }}>
               <div className="max-w-xl">
                 <div className="mb-8">
                   <svg

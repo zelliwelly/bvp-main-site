@@ -97,20 +97,23 @@ export default function ContactPage() {
     return (
       <div className="min-h-screen bg-white">
         {/* Hero */}
-        <section className="pt-24 bg-white border-b border-gray-200">
-          <div className="py-12 md:py-16 px-6 md:px-24">
+        <section className="bg-white border-b border-gray-200">
+          <div style={{ padding: 'clamp(6rem, 10vw, 6rem) clamp(1.5rem, 5vw, 6rem) clamp(2rem, 5vw, 4rem)' }}>
             <div className="max-w-[1400px] mx-auto">
               <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
                 Message Sent
               </p>
-              <h1 className="text-4xl md:text-5xl font-black leading-tight mb-4 font-display">
+              <h1
+                className="font-black leading-tight mb-4 font-display"
+                style={{ fontSize: 'clamp(1.75rem, 1rem + 3.5vw, 3rem)' }}
+              >
                 Thank You
               </h1>
             </div>
           </div>
         </section>
 
-        <section className="py-16 px-6 md:px-24">
+        <section style={{ padding: 'clamp(2rem, 6vw, 4rem) clamp(1.5rem, 5vw, 6rem)' }}>
           <div className="max-w-xl">
             <div className="mb-6">
               <svg
@@ -162,12 +165,18 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero - Compact */}
-      <section className="pt-28 md:pt-32 pb-6 px-6 md:px-24 bg-white border-b border-gray-200">
+      <section
+        className="bg-white border-b border-gray-200"
+        style={{ padding: 'clamp(6rem, 10vw, 8rem) clamp(1.5rem, 5vw, 6rem) clamp(1rem, 2vw, 1.5rem)' }}
+      >
         <div className="max-w-[1400px] mx-auto">
           <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
             Get in touch
           </p>
-          <h1 className="text-3xl md:text-4xl font-black leading-tight mb-2 font-display">
+          <h1
+            className="font-black leading-tight mb-2 font-display"
+            style={{ fontSize: 'clamp(1.5rem, 1rem + 2.5vw, 2.5rem)' }}
+          >
             Contact Us
           </h1>
           <p className="text-base text-gray-500">
@@ -179,9 +188,15 @@ export default function ContactPage() {
 
       {/* Content - Two Column Layout */}
       <section>
-        <div className="grid md:grid-cols-2">
+        <div
+          className="grid"
+          style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))' }}
+        >
           {/* Form Panel - First on mobile, Right on desktop */}
-          <div className="bg-gray-100 p-6 md:p-8 lg:p-10 order-1 md:order-2">
+          <div
+            className="bg-gray-100 order-1 md:order-2"
+            style={{ padding: 'clamp(1.5rem, 4vw, 2.5rem)' }}
+          >
             <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">
               Send a Message
             </p>
@@ -330,9 +345,10 @@ export default function ContactPage() {
 
           {/* Dark Panel - Second on mobile, Left on desktop */}
           <div
-            className="text-white p-6 md:p-8 lg:p-10 flex flex-col order-2 md:order-1"
+            className="text-white flex flex-col order-2 md:order-1"
             style={{
               background: "linear-gradient(180deg, #3a3a3a 0%, #1a1a1a 100%)",
+              padding: 'clamp(1.5rem, 4vw, 2.5rem)',
             }}
           >
             {/* Email Icon */}

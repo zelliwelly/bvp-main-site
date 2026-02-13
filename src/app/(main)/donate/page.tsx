@@ -256,13 +256,22 @@ export default function DonatePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="pt-24 min-h-screen">
-        <div className="py-12 md:py-16 px-6 md:px-24">
+      <section className="min-h-screen" style={{ paddingTop: 'clamp(6rem, 10vw, 6rem)' }}>
+        <div style={{ padding: 'clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 6rem)' }}>
           <div className="max-w-[1400px] mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-16">
+            <div
+              className="grid"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 340px), 1fr))',
+                gap: 'clamp(2rem, 5vw, 4rem)',
+              }}
+            >
               {/* Left Column: Copy */}
               <div className="pt-4">
-                <h1 className="text-3xl md:text-4xl font-bold mb-8 leading-tight font-display">
+                <h1
+                  className="font-bold leading-tight font-display"
+                  style={{ fontSize: 'clamp(1.5rem, 1rem + 2.5vw, 2.5rem)', marginBottom: 'clamp(1.5rem, 4vw, 2rem)' }}
+                >
                   Help us secure the Legacy for Black Veterans
                 </h1>
                 <div className="space-y-6">

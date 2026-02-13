@@ -377,13 +377,16 @@ export default function FAQPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-24 bg-white border-b border-gray-200">
-        <div className="py-12 px-6 md:px-24">
+      <section className="bg-white border-b border-gray-200">
+        <div style={{ padding: 'clamp(6rem, 10vw, 6rem) clamp(1.5rem, 5vw, 6rem) clamp(2rem, 5vw, 3rem)' }}>
           <div className="max-w-[1400px] mx-auto">
             <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
               Frequently Asked Questions
             </p>
-            <h1 className="text-3xl md:text-5xl font-bold text-black leading-tight font-display max-w-4xl">
+            <h1
+              className="font-bold text-black leading-tight font-display max-w-4xl"
+              style={{ fontSize: 'clamp(1.75rem, 1rem + 3.5vw, 3rem)' }}
+            >
               Common questions about BVP, the Monk case, and how to get
               involved.
             </h1>
@@ -393,7 +396,7 @@ export default function FAQPage() {
 
       {/* FAQ Content */}
       <section className="bg-gray-100">
-        <div className="py-12 md:py-16 px-6 md:px-24">
+        <div style={{ padding: 'clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 6rem)' }}>
           <div className="max-w-[1400px] mx-auto">
             {faqSections.map((section, index) => (
               <FAQSectionComponent

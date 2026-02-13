@@ -2,13 +2,16 @@ export default function TermsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-24 bg-white border-b border-gray-200">
-        <div className="py-12 md:py-16 px-6 md:px-24">
+      <section className="bg-white border-b border-gray-200">
+        <div style={{ padding: 'clamp(6rem, 10vw, 6rem) clamp(1.5rem, 5vw, 6rem) clamp(2rem, 5vw, 4rem)' }}>
           <div className="max-w-[1400px] mx-auto">
             <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">
               Legal
             </p>
-            <h1 className="text-4xl md:text-5xl font-black leading-tight font-display">
+            <h1
+              className="font-black leading-tight font-display"
+              style={{ fontSize: 'clamp(1.75rem, 1rem + 3.5vw, 3rem)' }}
+            >
               Terms of Use
             </h1>
           </div>
@@ -16,7 +19,7 @@ export default function TermsPage() {
       </section>
 
       {/* Content */}
-      <section className="py-12 md:py-16 px-6 md:px-24">
+      <section style={{ padding: 'clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 6rem)' }}>
         <article className="max-w-[800px]">
           <p className="text-sm text-gray-500 mb-8">
             Last updated: February 2026
